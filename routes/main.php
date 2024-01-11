@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'main.index')->name('main');
-Route::redirect('/main', '/')->name('main.redirect');
+
+
 
