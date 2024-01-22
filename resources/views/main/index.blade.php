@@ -13,7 +13,8 @@
 
     <main class="max-w-screen-2xl w-full mx-auto px-4">
         <section class="hero" id="hero">
-            <div class="grid sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-2">
+            <div class="
+            grid sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-2">
                 <div class="flex flex-col items-center justify-center border-[1px] border-[#ffffff] border-opacity-10 pt-[6.5rem] pb-[6.5rem]">
                     <div class="
                     m-0 p-5
@@ -146,7 +147,7 @@
         </section>
 
         
-        @include('general/main_slider')
+        @include('general/allCourse_list')
         <section id="categories" class="categories">
             <ul class="flex flex-col">
                 <li class=" border-b-[1px] border-t-[1px] border-[#ffffff] border-opacity-10">
