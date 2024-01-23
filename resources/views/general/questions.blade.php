@@ -173,5 +173,11 @@
 {{--        </div>--}}
 {{--    </div>--}}
 </section>
+<script>
+    function handleRadioClick(value) {
+        const resultLabel = document.getElementById("radio-link");
+        resultLabel.innerHTML =  value;
+    }
+</script>
 
 
