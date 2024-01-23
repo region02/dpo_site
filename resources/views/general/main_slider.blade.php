@@ -2,7 +2,7 @@
 <section class='course_gallery pl-4 py-12' id='course_gallery'>
 
     <!-- Slider main container -->
-    <div class="swiper w-[600px] h-[400px]">
+    <div class="swiper max-w-[600px] h-[400px]">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->

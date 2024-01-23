@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css']);
 
-    @vite('resources/js/app.js')
-    @stack('scripts')
+    @vite(['resources/js/app.js']);
+    @stack('scripts');
     <!-- resources/views/welcome.blade.php -->
     <script type="module" defer src="{{ asset('build/assets/feedback-w40geAFS.js') }}"></script>
 
@@ -138,29 +138,29 @@
         @include('general/main_slider')
 
 
-        <section id="categories" class="categories px-20">
+        <section id="categories" class="categories px-3 lg:px-20">
             <ul class="flex flex-col">
                 <li class=" border-b-[1px] border-t-[1px] border-[#ffffff] border-opacity-10">
                     <a href="#" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
-                        <span class="font-sans text-white text-xl font-bold tracking-wider">Повышение квалификации</span>
+                        <span class="font-sans text-white text-lg xs:text-xl font-bold tracking-wider">Повышение квалификации</span>
                         <img src="{{ url('img/icons/link_categories_main.svg') }}" alt="иконка ссылки">
                     </a>
                 </li>
                 <li class=" border-b-[1px] border-[#ffffff] border-opacity-10">
                     <a href="#" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
-                        <span class="font-sans text-white text-xl font-bold tracking-wider">Профессиональная переподготовка</span>
+                        <span class="font-sans text-white text-lg xs:text-xl font-bold tracking-wider">Профессиональная переподготовка</span>
                         <img src="{{ url('img/icons/link_categories_main.svg') }}" alt="иконка ссылки">
                     </a>
                 </li>
                 <li class=" border-b-[1px] border-[#ffffff] border-opacity-10">
                     <a href="#" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
-                        <span class="font-sans text-white text-xl font-bold tracking-wider">Летние/Зимние/Осенние/Весенние ШКОЛЫ</span>
+                        <span class="font-sans text-white text-lg xs:text-xl font-bold tracking-wider">Летние/Зимние/Осенние/Весенние ШКОЛЫ</span>
                         <img src="{{ url('img/icons/link_categories_main.svg') }}" alt="иконка ссылки">
                     </a>
                 </li>
                 <li class=" border-b-[1px] border-[#ffffff] border-opacity-10">
                     <a href="#" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
-                        <span class="font-sans text-white text-xl font-bold tracking-wider">Курсы для детей</span>
+                        <span class="font-sans text-white text-lg xs:text-xl font-bold tracking-wider">Курсы для детей</span>
                         <img src="{{ url('img/icons/link_categories_main.svg') }}" alt="иконка ссылки">
                     </a>
                 </li>
@@ -174,6 +174,8 @@
         </section>
 
         @include('general/questions')
+        @include('general/footer')
+
     </main>
 
 </body>

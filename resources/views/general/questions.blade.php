@@ -1,10 +1,10 @@
 
 <section id="feedback" class="feedback">
-    <div class="feedback__wrapper px-3 lg:px-20 ">
+    <div class="feedback__wrapper px-3 lg:px-20 pt-28">
         <div class="feedback__container bg-white bg-opacity-10 rounded-[15px] px-10 py-14 min-h-[424px]">
             <div class="feedback__name flex flex-col gap-[10px]">
                 <h2 class="uppercase font-sans text-[#E5E5E5]
-                        text-[2.5rem] font-[800] tracking-wider leading-[1.975rem]
+                        text-[2.5rem] font-[800] tracking-wider leading-[2.975rem] sm:leading-[1.975rem]
                         max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider
                         sm:text-[1.5rem] sm:font-[800] sm:tracking-wider
                         md:text-[2.0rem] md:font-[800] md:tracking-wider
@@ -173,10 +173,5 @@
 {{--        </div>--}}
 {{--    </div>--}}
 </section>
-<script >
-    function handleRadioClick(value) {
-        const resultLabel = document.getElementById("radio-link");
-        resultLabel.innerHTML =  value;
-    }
-</script>
+
 
