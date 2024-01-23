@@ -7,4 +7,46 @@
     .bg-color-main {
         background: linear-gradient(90deg, #000428 0%, #004E92 100%);
     }
+
+    /*  feedback grid layout*/
+    .feedback__container{
+        display: grid;
+        grid-template-areas:
+            'A B'
+            'x B'
+            'C B';
+        grid-template-columns: 60% 40%;
+    }
+    @media screen and (max-width: 1100px) {
+        .feedback__container{
+            display: grid;
+            grid-template-areas:
+            'A A'
+            'B B'
+            'C C';
+            grid-template-columns: 100%;
+            grid-row-gap: 40px;
+        }
+
+    }
+    .feedback__name{
+        grid-area: A;
+    }
+    .feedback__form{
+        grid-area: B;
+
+    }
+    .feedback__contacts{
+        grid-area: C;
+    }
+    input[type="radio"]:checked {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    /*  feedback grid layout*/
+
   }
