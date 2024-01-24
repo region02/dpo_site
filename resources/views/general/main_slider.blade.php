@@ -1,25 +1,54 @@
 
-<section class='course_gallery pl-4 py-12' id='course_gallery'>
+<section class='course_gallery pl-4 py-12 px-3 lg:px-20' id='course_gallery'>
 
-    <!-- Slider main container -->
-    <div class="swiper max-w-[600px] h-[400px]">
-        <!-- Additional required wrapper -->
+    <div class="swiper ">
         <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
 
+            <div class="swiper-slide h-auto">
+                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
+                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                        по-переводчески</h4>
+                </div>
+            </div>
+            <div class="swiper-slide h-auto">
+                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
+                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                        по-переводчески</h4>
+                </div>
+            </div>
+            <div class="swiper-slide h-auto">
+                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
+                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                        по-переводчески</h4>
+                </div>
+            </div>
+            <div class="swiper-slide h-auto">
+                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
+                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                        по-переводчески</h4>
+                </div>
+            </div>
+            <div class="swiper-slide h-auto">
+                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
+                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                        по-переводчески</h4>
+                </div>
+            </div>
+            <div class="swiper-slide h-auto">
+                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
+                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                        по-переводчески</h4>
+                </div>
+            </div>
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
     </div>
 
 
@@ -31,7 +60,11 @@
 
 
 
-{{--    <div id="gallery" class="relative w-[90%] mx-auto" data-carousel="slide">--}}
+
+
+
+
+    {{--    <div id="gallery" class="relative w-[90%] mx-auto" data-carousel="slide">--}}
 {{--        <!-- Carousel wrapper -->--}}
 {{--        <div class="relative h-auto overflow-hidden rounded-lg md:h-auto--}}
 {{--        grid grid-cols-1 grid-rows-1--}}

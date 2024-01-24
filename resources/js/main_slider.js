@@ -1,31 +1,44 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
+const swiper = new Swiper('.swiper', {
+    modules: [Navigation],
+    slidesPerView: 3,
+    slidesPerColumn: 1,
+    slidesPerGroup :1,
+    spaceBetween: 30,
+    navigation: {                       //navigation(arrows)
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    // Navigation arrows
 
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
+
+
+    on: {
+        init: function () {},
+        orientationchange: function(){},
+        beforeResize: function(){
+            let vw = window.innerWidth;
+            if(vw > 1000){
+                swiper.params.slidesPerView = 3
+                swiper.params.slidesPerColumn = 3
+                swiper.params.slidesPerGroup = 3;
+            } else {
+                swiper.params.slidesPerView = 4
+                swiper.params.slidesPerColumn = 2
+                swiper.params.slidesPerGroup =4;
+            }
+            swiper.init();
         },
-    });
+    },
+
 });
+

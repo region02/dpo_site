@@ -1,46 +1,46 @@
-<section id="questions" class="questions">
-    <div class="wrapper 
-    bg-white bg-opacity-10
-    border-[1px] border-[#ffffff] border-opacity-10 
-    my-16 py-16">
-        <div class="flex flex-col md:flex-row w-full px-5" id="contact-form">
-            <div class="md:w-1/2 w-full flex flex-col justify-between">
-                <div>
-                    <h3 class="uppercase font-sans text-[#E5E5E5] 
-                        text-[2.5rem] font-[700] tracking-wider leading-[1.375rem]
-                        max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
-                        sm:text-[1.5rem] sm:font-[700] sm:tracking-wider sm:leading-[0.5rem]
-                        md:text-[2.0rem] md:font-[700] md:tracking-wider md:leading-[1.2rem]
-                        lg:text-[2.3rem] lg:font-[700] lg:tracking-wider lg:leading-[1.35rem]
-                        xl:text-[2.5rem] xl:font-[700] xl:tracking-wider xl:leading-[1.375rem]
-                        mb-6">
-                        Остались вопросы?
-                    </h3>
-                    <p class="font-sans text-[#E5E5E5]
-                            text-[1.25rem] font-[700] tracking-wider">
-                        Мы с вами свяжемся</p>
-
-                </div>
-                <div>
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul>
-                </div>
-
+@vite('resources/js/feedback.js')
+<section id="feedback" class="feedback">
+    <div class="feedback__wrapper px-3 lg:px-20 pt-28">
+        <div class="feedback__container bg-white bg-opacity-10 rounded-[15px] px-10 py-14 min-h-[424px]">
+            <div class="feedback__name flex flex-col gap-[10px]">
+                <h2 class="uppercase font-sans text-[#E5E5E5]
+                        text-[2.5rem] font-[800] tracking-wider leading-[2.975rem] sm:leading-[1.975rem]
+                        max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider
+                        sm:text-[1.5rem] sm:font-[800] sm:tracking-wider
+                        md:text-[2.0rem] md:font-[800] md:tracking-wider
+                        lg:text-[2.3rem] lg:font-[800] lg:tracking-wider
+                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider ">остались вопросы?</h2>
+                <h5 class="text-[#fff] text-[20px] font-[600]">Мы с вами свяжемся</h5>
             </div>
-            <div class="md:w-1/2 w-full mt-10 md:mt-0 md:pl-28">
-                <h1 class="text-4xl text-gray-800 sm:text-4xl font-bold title-font mb-4">Contact Form</h1>
-                <form action="send-contact.php" method="post" id="submit-contact-form">
-                    <div class="p-2 w-full">
-                        <div class="relative">
-                            <label for="name" class="leading-7 py-4 text-lg text-gray-900">Your Name</label>
-                            <input type="text" id="name" name="name" required="" class="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out ">
-                        </div>
+
+
+            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] flex flex-col justify-center gap-[30px]" action="">
+                <div class=" relative ">
+                    <label for="name" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
+                    <input type="text" id="name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
+                </div>
+
+                <div class=" radio-party flex  justify-center flex-col gap-[20px] sm:gap-[15px] sm:flex-row">
+                    <div class="flex items-center me-4">
+                        <input  id="messanger-bt" type="radio" value="" name="feedback-radio"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                                                                                            border-[2px] z-0 checked:border-transparent checked:bg-transparent
+                                                                                            before:scale-0
+                                                                                            checked:before:scale-100
+                                                                                            before:absolute before:content-[' '] before:bg-[#DA22FF]
+                                                                                            before:w-[15px] before:h-[15px] before:rounded-[50%]
+                                                                                            before:p-0 before:left-[4px] before:top-[4px]
+                                                                                            before:z-10
+
+                                                                                            after:scale-0
+                                                                                            checked:after:scale-100
+                                                                                            after:absolute after:content-[' ']
+                                                                                            after:w-[27px] after:h-[27px] after:rounded-[50%]
+                                                                                            after:border-[3px] after:border-solid after:border-[#DA22FF]
+                                                                                            after:z-11 after:left-[-2px] after:top-[-2px]" >
+                        <label for="messanger-bt" class="ms-2 text-sm font-medium text-[#fff] ">мессенджер</label>
                     </div>
                     <div class="flex items-center me-4">
-                        <input  id="email-bt" type="radio" value="" name="feedback-radio" onclick="handleRadioClick('почта')" class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input  id="email-bt" type="radio" value="" name="feedback-radio"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -58,7 +58,7 @@
                         <label for="email-bt" class="ms-2 text-sm font-medium text-[#fff] ">почта</label>
                     </div>
                     <div class="flex items-center me-4">
-                        <input  id="phone-bt" type="radio" checked value="" name="feedback-radio" onclick="handleRadioClick('телефон')" class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input  id="phone-bt" type="radio" checked value="" name="feedback-radio"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -173,11 +173,6 @@
 {{--        </div>--}}
 {{--    </div>--}}
 </section>
-<script>
-    function handleRadioClick(value) {
-        const resultLabel = document.getElementById("radio-link");
-        resultLabel.innerHTML =  value;
-    }
-</script>
+
 
 
