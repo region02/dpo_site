@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @vite(['resources/css/app.css']);
+    @vite(['resources/css/app.css'])
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    @vite('resources/js/feedback.js');
-    @vite('resources/js/main_slider.js');
-    @vite(['resources/js/app.js']);
-    @stack('scripts');
+    @vite('resources/js/feedback.js')
+    @vite('resources/js/main_slider.js')
+    @vite(['resources/js/app.js'])
+    @stack('scripts')
     <!-- resources/views/welcome.blade.php -->
 
 
@@ -20,7 +20,7 @@
 <body class='bg-color-main'>
     @include('general/header')
 
-    <main class="max-w-screen-2xl w-full mx-auto px-4">
+    <main class=" w-full mx-auto ">
         <section class="hero" id="hero">
             <div class="grid sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-2">
                 <div class="flex flex-col items-center justify-center border-[1px] border-[#ffffff] border-opacity-10 pt-[6.5rem] pb-[6.5rem]">
@@ -137,10 +137,10 @@
             </div>
         </section>
 
-        
+
         @include('general/main_slider')
         <section id="categories" class="categories">
-            <ul class="flex flex-col">
+            <ul class="flex flex-col px-3 lg:px-12">
                 <li class=" border-b-[1px] border-t-[1px] border-[#ffffff] border-opacity-10">
                     <a href="#" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
                         <span class="font-sans text-white text-lg xs:text-xl font-bold tracking-wider">Повышение квалификации</span>

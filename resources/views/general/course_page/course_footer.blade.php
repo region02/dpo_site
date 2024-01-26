@@ -1,5 +1,5 @@
 <section class="footer ">
-    <div class="footer__wrapper px-3 lg:px-12">
+    <div class="footer__wrapper px-3 lg:px-20">
         <div class="footer__container flex flex-col max-w-[100%] sm:max-w-[70%] border-t-[2px] border-t-[#fff] border-solid gap-[30px] mt-28 pb-32">
             <ul class="nav-list flex flex-wrap gap-[20px] pt-8">
                 <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">О курсах</li>

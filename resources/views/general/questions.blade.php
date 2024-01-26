@@ -1,6 +1,6 @@
 @vite('resources/js/feedback.js')
 <section id="feedback" class="feedback">
-    <div class="feedback__wrapper px-3 lg:px-20 pt-28">
+    <div class="feedback__wrapper px-3 lg:px-12 pt-28">
         <div class="feedback__container bg-white bg-opacity-10 rounded-[15px] px-10 py-14 min-h-[424px]">
             <div class="feedback__name flex flex-col gap-[10px]">
                 <h2 class="uppercase font-sans text-[#E5E5E5]
@@ -173,6 +173,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 </section>
+
 
 
 

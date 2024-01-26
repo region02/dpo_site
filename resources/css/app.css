@@ -49,4 +49,33 @@
     }
     /*  feedback grid layout*/
 
+
+    .swiper-slide_flex{
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .swiper-wrapper_flex{
+        height: auto !important;
+    }
+    @media screen and (max-width:480px ) {
+        .swiper-wrapper_flex{
+            height: 213px !important;
+        }
+    }
+    @media screen and (max-width:380px ) {
+        .swiper-wrapper_flex{
+            height: 168px !important;
+        }
+    }
+
+    .swiper-button-prev {
+        transform: translateX(-50%);
+
+    }
+    .swiper-button-next{
+        transform: translateX(50%);
+    }
+
+
   }

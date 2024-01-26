@@ -1,51 +1,83 @@
 
-<section class='course_gallery pl-4 py-12 px-3 lg:px-20' id='course_gallery'>
+<section class='course_gallery pl-4 py-12 px-3 lg:px-12' id='course_gallery'>
 
     <div class="swiper ">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper swiper-wrapper_flex ">
 
-            <div class="swiper-slide h-auto">
-                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+            <div class="swiper-slide swiper-slide_flex h-auto">
+                <div class="slide__card relative bg-white bg-opacity-10 rounded-[20px] rounded-br-[95px]
+                            max-w-[240px] h-[168px] flex justify-between p-5
+                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
+                    <h3 class="
+                               w-[calc(100%-80px)]
+                               min-[380px]:w-[calc(100%-110px)]
+                               min-[480px]:w-[calc(100%-130px)]
+
+                               uppercase text-[#fff] text-[20px] sm:text-[30px] font-[600] ">смотреть все курсы</h3>
+
+                    <img class="w-[70px]
+                                min-[380px]:w-[80px]
+                                min-[480px]:w-[100px]
+
+                                absolute  right-0 top-0" src="{{url('img/icons/link_courses_main.svg')}}" alt="">
+
+                </div>
+            </div>
+            <div class="swiper-slide swiper-slide_flex h-auto">
+                <div class="slide__card relative
+                            max-w-[240px] h-[168px]
+                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
                     <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
                         по-переводчески</h4>
                 </div>
             </div>
-            <div class="swiper-slide h-auto">
-                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+            <div class="swiper-slide swiper-slide_flex h-auto">
+                <div class="slide__card relative
+                            max-w-[240px] h-[168px]
+                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
                     <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
                         по-переводчески</h4>
                 </div>
             </div>
-            <div class="swiper-slide h-auto">
-                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+            <div class="swiper-slide swiper-slide_flex h-auto">
+                <div class="slide__card relative
+                            max-w-[240px] h-[168px]
+                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
                     <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
                         по-переводчески</h4>
                 </div>
             </div>
-            <div class="swiper-slide h-auto">
-                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+            <div class="swiper-slide swiper-slide_flex h-auto">
+                <div class="slide__card relative
+                            max-w-[240px] h-[168px]
+                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
                     <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
                         по-переводчески</h4>
                 </div>
             </div>
-            <div class="swiper-slide h-auto">
-                <div class="slide__card relative max-w-[400px] h-[280px]  ">
+            <div class="swiper-slide swiper-slide_flex h-auto">
+                <div class="slide__card relative
+                            max-w-[240px] h-[168px]
+                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
                     <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
+                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
                         по-переводчески</h4>
                 </div>
             </div>
-            <div class="swiper-slide h-auto">
-                <div class="slide__card relative max-w-[400px] h-[280px]  ">
-                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[26px] text-[700] p-6 ">Научитесь искусству перевода
-                        по-переводчески</h4>
-                </div>
-            </div>
+
+
+
+
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
