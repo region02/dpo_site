@@ -24,56 +24,21 @@
 
                 </div>
             </div>
-            <div class="swiper-slide swiper-slide_flex h-auto">
-                <div class="slide__card relative
+            @foreach($courses as $course)
+                <div class="swiper-slide swiper-slide_flex h-auto">
+                    <div class="slide__card relative
                             max-w-[240px] h-[168px]
                             min-[380px]:max-w-[300px] min-[380px]:h-[210px]
                             min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
-                        по-переводчески</h4>
+                        <img class="absolute z-0 rounded-[20px]
+                                    max-w-[240px] h-[168px]
+                                    min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                                    min-[480px]:max-w-[400px] min-[480px]:h-[280px]"
+                             src="/storage/{{$course->avatar}}">
+                        <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">{{$course->title}} </h4>
+                    </div>
                 </div>
-            </div>
-            <div class="swiper-slide swiper-slide_flex h-auto">
-                <div class="slide__card relative
-                            max-w-[240px] h-[168px]
-                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
-                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
-                        по-переводчески</h4>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide_flex h-auto">
-                <div class="slide__card relative
-                            max-w-[240px] h-[168px]
-                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
-                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
-                        по-переводчески</h4>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide_flex h-auto">
-                <div class="slide__card relative
-                            max-w-[240px] h-[168px]
-                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
-                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
-                        по-переводчески</h4>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide_flex h-auto">
-                <div class="slide__card relative
-                            max-w-[240px] h-[168px]
-                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
-                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                    <img class="absolute z-0 rounded-[20px]  " src="{{url('img/test-bg__1.png')}}">
-                    <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">Научитесь искусству перевода
-                        по-переводчески</h4>
-                </div>
-            </div>
+            @endforeach
 
 
 

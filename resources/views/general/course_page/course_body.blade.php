@@ -1,7 +1,7 @@
 <main class="px-40 py-5">
     <a href="/" class="flex gap-[10px]">
-        <img src="{{url('img/icons/return_arrow.svg')}}">
-        <h5 class="text-[#0279C1] text-[16px] font-[400]">все курсы</h5>
+        <img src="{{url('img/icons/return_arrow-white.svg')}}">
+        <h5 class="text-[#E5E5E5] text-[16px] font-[400]">все курсы</h5>
     </a>
     <div class="course-container pt-20">
         <div class="course__profile flex flex-col px-16 gap-[30px]">
@@ -27,7 +27,50 @@
                 </div>
                 <img src="{{url('img/test-bg__3.png')}}" alt="">
             </div>
-            <div class="profile__body px-[25px] py-[20px]">
+            <div class="profile__body bg-[#e5e5e514] flex flex-row
+                        rounded-[15px]
+                         px-[25px] py-[20px] relative">
+                <div class="profile__item flex flex-col gap-2 px-7">
+                    <img width="46px" src="{{url('img/icons/course_calendar.svg')}}">
+                    <h5 class="card__subtitle text-[#fff] text-[20px] font-[600]">
+                        Старт
+                    </h5>
+                    <h5 class="card__subtitle text-[#fff] text-[16px] font-[200]">
+                        4 сентября
+                    </h5>
+                </div>
+                <span class="h-[90px] w-[1px] bg-[#ffffff33] my-auto"></span>
+                <div class="profile__item flex flex-col gap-2 px-7">
+                    <img width="46px" src="{{url('img/icons/course_time.svg')}}">
+                    <h5 class="card__subtitle text-[#fff] text-[20px] font-[600]">
+                        Длительность
+                    </h5>
+                    <h5 class="card__subtitle text-[#fff] text-[16px] font-[200]">
+                        3 месяца
+                    </h5>
+                </div>
+                <span class="h-[90px] w-[1px] bg-[#ffffff33] my-auto"></span>
+                <div class="profile__item flex flex-col gap-2 px-7">
+                    <img width="46px" src="{{url('img/icons/course_hat.svg')}}">
+                    <h5 class="card__subtitle text-[#fff] text-[20px] font-[600]">
+                        Нагрузка
+                    </h5>
+                    <h5 class="card__subtitle text-[#fff] text-[16px] font-[200]">
+                        150 ак.ч. в том числе
+                        100 аудит. ч.
+                    </h5>
+                </div>
+                <span class="h-[90px] w-[1px] bg-[#ffffff33] my-auto"></span>
+                <div class="profile__item flex flex-col gap-2 px-7">
+                    <img width="46px" src="{{url('img/icons/course_book.svg')}}">
+                    <h5 class="card__subtitle text-[#fff] text-[20px] font-[600]">
+                        Формат
+                    </h5>
+                    <h5 class="card__subtitle text-[#fff] text-[16px] font-[200]">
+                        очная
+                        очно-заочная с ДОТ
+                    </h5>
+                </div>
 
             </div>
         </div>

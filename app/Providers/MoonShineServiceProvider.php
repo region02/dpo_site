@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\MoonShine\Resources\CategoryResource;
+use App\MoonShine\Resources\CourseResource;
+use App\MoonShine\Resources\CourseTypeResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -28,20 +30,34 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     {
         return [
             MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
-               MenuItem::make(
-                   static fn() => __('moonshine::ui.resource.admins_title'),
-                   new MoonShineUserResource()
-               ),
-               MenuItem::make(
-                   static fn() => __('moonshine::ui.resource.role_title'),
-                   new MoonShineUserRoleResource()
-               ),
+                MenuItem::make(
+                    static fn() => __('moonshine::ui.resource.admins_title'),
+                    new MoonShineUserResource()
+                ),
+                MenuItem::make(
+                    static fn() => __('moonshine::ui.resource.role_title'),
+                    new MoonShineUserRoleResource()
+                ),
             ]),
-            
+            MenuGroup::make(static fn() => 'Курсы', [
+                MenuItem::make(
+                    static fn() => 'Курсы',
+                    new CourseResource()
+                ),
+                MenuItem::make(
+                    static fn() => 'Типы',
+                    new CourseTypeResource()
+                ),
+            ]),
+
+
+
+
             MenuItem::make(
                 static fn() => 'Редактор Категорий',
                 new CategoryResource()
                 )->icon('heroicons.tag'),
+
         ];
     }
 

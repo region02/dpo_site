@@ -119,108 +119,35 @@
                 </div>
             </div>
             <div class="courses__content">
-                <div class="courses-list grid grid-cols-1 md:grid-cols-2 place-items-center
+                <div class="courses-list grid grid-cols-1 md:grid-cols-2
                             gap-x-0 sm:gap-x-[20px] gap-y-[15px] sm:gap-y-[50px]">
-                    <div class="course-card flex flex-col gap-4 max-w-[430px]">
-                        <div class="card__body relative">
-                            <div class="card__type">
-                                <h5 class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
+                    @foreach($courses as $course)
+                        <div class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
+                            <div class="card__body relative">
+                                <div class="card__type">
+                                    <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
                                            font-[500] tracking-[.9px] rounded-[12px]
-                                           bg-gradient-to-r from-[#FF512F] to-[#DD2476]
+{{--                                           bg-gradient-to-r from-[{{$course->courseType->color_from}}] to-[{{$course->courseType->color_to}}]--}}
                                            m-[10px] sm:m-[20px] px-[15px] py-[7px] sm:px-[20px] sm:py-[9px] ">
-                                    Повышение квалификации
-                                </h5>
+                                        {{$course->courseType->text}}
+                                    </h5>
+                                </div>
+                                <img class="rounded-[18px]" src="/storage/{{$course->avatar}}" alt="">
                             </div>
-                            <img src="{{url('img/test-bg__2.png')}}" alt="">
-                        </div>
-                        <div class="card__info flex flex-col gap-3">
-                            <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
-                                Интенсив-курс профессионального перевода (английский язык)
-                            </h4>
-                            <h5 class="card__subtitle text-[#24272B] text-[20px] font-[400]">
-                                Научитесь искусству перевода
-                                по-переводчески
-                            </h5>
-                            <h4 class="card__price text-[#24272B] text-[30px] font-[700]">
-                                10 000 ₽
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="course-card flex flex-col gap-4 max-w-[430px]">
-                        <div class="card__body relative">
-                            <div class="card__type">
-                                <h5 class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
-                                           font-[500] tracking-[.9px] rounded-[12px]
-                                           bg-gradient-to-r from-[#FF512F] to-[#DD2476]
-                                           m-[10px] sm:m-[20px] px-[15px] py-[7px] sm:px-[20px] sm:py-[9px] ">
-                                    Повышение квалификации
+                            <div class="card__info flex flex-col gap-3">
+                                <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
+                                    {{$course->title}}
+                                </h4>
+                                <h5 class="card__subtitle text-[#24272B] text-[20px] font-[400]">
+                                    {{$course->subtitle}}
                                 </h5>
+                                <h4 class="card__price text-[#24272B] text-[30px] font-[700]">
+                                    {{$course->cost}}₽
+                                </h4>
                             </div>
-                            <img src="{{url('img/test-bg__2.png')}}" alt="">
                         </div>
-                        <div class="card__info flex flex-col gap-3">
-                            <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
-                                Интенсив-курс профессионального перевода (английский язык)
-                            </h4>
-                            <h5 class="card__subtitle text-[#24272B] text-[20px] font-[400]">
-                                Научитесь искусству перевода
-                                по-переводчески
-                            </h5>
-                            <h4 class="card__price text-[#24272B] text-[30px] font-[700]">
-                                10 000 ₽
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="course-card flex flex-col gap-4 max-w-[430px]">
-                        <div class="card__body relative">
-                            <div class="card__type">
-                                <h5 class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
-                                           font-[500] tracking-[.9px] rounded-[12px]
-                                           bg-gradient-to-r from-[#FF512F] to-[#DD2476]
-                                           m-[10px] sm:m-[20px] px-[15px] py-[7px] sm:px-[20px] sm:py-[9px] ">
-                                    Повышение квалификации
-                                </h5>
-                            </div>
-                            <img src="{{url('img/test-bg__2.png')}}" alt="">
-                        </div>
-                        <div class="card__info flex flex-col gap-3">
-                            <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
-                                Интенсив-курс профессионального перевода (английский язык)
-                            </h4>
-                            <h5 class="card__subtitle text-[#24272B] text-[20px] font-[400]">
-                                Научитесь искусству перевода
-                                по-переводчески
-                            </h5>
-                            <h4 class="card__price text-[#24272B] text-[30px] font-[700]">
-                                10 000 ₽
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="course-card flex flex-col gap-4 max-w-[430px]">
-                        <div class="card__body relative">
-                            <div class="card__type">
-                                <h5 class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
-                                           font-[500] tracking-[.9px] rounded-[12px]
-                                           bg-gradient-to-r from-[#FF512F] to-[#DD2476]
-                                           m-[10px] sm:m-[20px] px-[15px] py-[7px] sm:px-[20px] sm:py-[9px] ">
-                                    Повышение квалификации
-                                </h5>
-                            </div>
-                            <img src="{{url('img/test-bg__2.png')}}" alt="">
-                        </div>
-                        <div class="card__info flex flex-col gap-3">
-                            <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
-                                Интенсив-курс профессионального перевода (английский язык)
-                            </h4>
-                            <h5 class="card__subtitle text-[#24272B] text-[20px] font-[400]">
-                                Научитесь искусству перевода
-                                по-переводчески
-                            </h5>
-                            <h4 class="card__price text-[#24272B] text-[30px] font-[700]">
-                                10 000 ₽
-                            </h4>
-                        </div>
-                    </div>
+                    @endforeach
+
 
                 </div>
 

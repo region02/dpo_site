@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6657c71ab754dc9af620065270e056e",
+    "content-hash": "6771762c66fef7b11541d9a7a169a98d",
     "packages": [
         {
             "name": "brick/math",
@@ -2045,16 +2045,16 @@
         },
         {
             "name": "moonshine/moonshine",
-            "version": "2.5.2",
+            "version": "2.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moonshine-software/moonshine.git",
-                "reference": "d53cf9142656eff251f0a5c5246a77a1c46d3db5"
+                "reference": "eb034dbe036f1e5388f5a1bc7e655192a6113251"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moonshine-software/moonshine/zipball/d53cf9142656eff251f0a5c5246a77a1c46d3db5",
-                "reference": "d53cf9142656eff251f0a5c5246a77a1c46d3db5",
+                "url": "https://api.github.com/repos/moonshine-software/moonshine/zipball/eb034dbe036f1e5388f5a1bc7e655192a6113251",
+                "reference": "eb034dbe036f1e5388f5a1bc7e655192a6113251",
                 "shasum": ""
             },
             "require": {
@@ -2074,7 +2074,7 @@
                 "pestphp/pest": "^2.24.2",
                 "pestphp/pest-plugin-laravel": "^2.2",
                 "pestphp/pest-plugin-mock": "^2.0",
-                "rector/rector": "^0.18"
+                "rector/rector": "^0.19"
             },
             "suggest": {
                 "laravel/socialite": "Required to use the Socialite",
@@ -2130,7 +2130,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-12-29T09:10:13+00:00"
+            "time": "2024-01-19T15:08:27+00:00"
         },
         {
             "name": "nesbot/carbon",

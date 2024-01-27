@@ -8,9 +8,11 @@
     @vite(['resources/css/app.css'])
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    @vite(['resources/js/app.js'])
     @vite('resources/js/feedback.js')
     @vite('resources/js/main_slider.js')
-    @vite(['resources/js/app.js'])
     @stack('scripts')
     <!-- resources/views/welcome.blade.php -->
 
