@@ -1,7 +1,7 @@
 
 <section class='course_gallery pl-4 py-12 px-3 lg:px-12' id='course_gallery'>
 
-    <div class="swiper ">
+    <div class="swiper">
         <div class="swiper-wrapper swiper-wrapper_flex ">
 
             <div class="swiper-slide swiper-slide_flex h-auto">

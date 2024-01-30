@@ -90,4 +90,45 @@
         mask-composite: exclude;
     }
 
+    .c-about__container{
+        display: grid;
+        grid-template-areas:
+            '. A'
+            'B .'
+            'C D';
+        grid-template-columns: 60% 40%;
+        grid-row-gap: 30px;
+        grid-column-gap: 30px;
+
+    }
+
+    .c-about__item_1{
+        grid-area: A;
+    }
+    .c-about__item_2{
+        grid-area: B;
+    }
+    .c-about__item_3{
+        grid-area: C;
+    }
+    .c-about__item_4{
+        grid-area: D;
+    }
+
+
+    .c-about__item::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        padding: 1px;
+        background:linear-gradient(90deg,#e5e5e5,transparent);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+
   }

@@ -25,7 +25,7 @@
     <main class=" w-full mx-auto ">
         <section class="hero" id="hero">
             <div class="grid sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-2">
-                <div class="flex flex-col items-center justify-center border-[1px] border-[#ffffff] border-opacity-10 pt-[6.5rem] pb-[6.5rem]">
+                <div class="flex flex-col items-center justify-center border-[1px] border-[#ffffff] border-opacity-10 pt-[6.5rem] pb-[6.5rem] ">
                     <div class="
                     m-0 p-5
                     md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
@@ -59,6 +59,8 @@
                         lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
                         xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]">вас</h3>
                     </div>
+
+
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 border-0 sm:border-l-[2px] lg:border-b-[1px] lg:border-t-[1px]  border-[#ffffff] border-opacity-15 ">
                     <div class="border-[2px] border-[#ffffff] border-opacity-15 border-l-0 border-t-0 pr-1 relative">

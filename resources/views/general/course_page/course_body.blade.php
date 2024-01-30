@@ -1,12 +1,12 @@
-<main class="px-40 py-5">
+<main class="px-44 py-5">
     <a href="/" class="flex gap-[10px]">
         <img src="{{url('img/icons/return_arrow-white.svg')}}">
         <h5 class="text-[#E5E5E5] text-[16px] font-[400]">все курсы</h5>
     </a>
     <div class="course-container pt-20">
-        <div class="course__profile flex flex-col px-16 gap-[30px]">
-            <div class="profile__head flex flex-row">
-                <div class="profile__title flex flex-col gap-[24px]">
+        <div class="course__profile flex flex-col px-10 gap-[30px]">
+            <div class="profile__head flex flex-row gap-2">
+                <div class="profile__title flex flex-col gap-[24px] max-w-[calc(100%-305px)] " >
                     <h5 class=" w-[fit-content] text-[#E5E5E5] text-[12px] sm:text-[18px]
                                 font-[500] tracking-[.9px] rounded-[12px]
                                 bg-gradient-to-r from-[#FF512F] to-[#DD2476]
@@ -23,9 +23,19 @@
                         Научитесь искусству перевода
                         по-переводчески
                     </h5>
+                    <div class="course__reg w-full flex justify-center">
+                        <a href="#" class="reg__link px-[50px] py-[15px] rounded-[15px]
+                                            border-solid border-[2px] border-[#e5e5e5] ">
+                            <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">
+                                Записаться
+                            </h4>
+                        </a>
+                    </div>
 
                 </div>
-                <img src="{{url('img/test-bg__3.png')}}" alt="">
+                <div class="course__photo max-w-[305px] max-h-[305px] w-full ">
+                    <img class="h-[100%] max-w-[100%]]" src="{{url('img/test-bg__3.png')}}" alt="">
+                </div>
             </div>
             <div class="profile__body bg-[#e5e5e514] flex flex-row
                         rounded-[15px]
@@ -75,5 +85,29 @@
             </div>
         </div>
     </div>
+    <section class="course-about mt-16">
+        <h2 class="text-[40px] text-[#e5e5e5] font-[700] font-sans">для кого?</h2>
+        <div class="c-about__container">
+            <div class="c-about__item c-about__item_1 relative px-[30px] py-[20px]">
+                <h4 class="text-[#fff] text-[25px] font-[700] ">Уровень английского языка
+                    должен быть ни ниже В2</h4>
+            </div>
+            <div class="c-about__item c-about__item_2 relative px-[30px] py-[20px]">
+                <h4 class="text-[#fff] text-[25px] font-[700] ">Для лиц, желающих научиться
+                    переводить по-переводчески</h4>
+                <h5 class="text-[#fff] text-[16px] font-[400] ">Для лиц, желающих научиться
+                    переводить по-переводчески</h5>
+            </div>
+            <div class="c-about__item c-about__item_3 relative px-[30px] py-[20px]">
+                <h4 class="text-[#fff] text-[25px] font-[700] ">Уровень английского языка
+                    должен быть ни ниже В2</h4>
+            </div>
+            <div class="c-about__item c-about__item_4 relative px-[30px] py-[20px]">
+                <h4 class="text-[#fff] text-[25px] font-[700] ">Уровень английского языка
+                    должен быть ни ниже В2</h4>
+            </div>
+
+        </div>
+    </section>
 
 </main>
