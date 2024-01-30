@@ -95,16 +95,17 @@
             <div class="c-about__item c-about__item_2 relative px-[30px] py-[20px]">
                 <h4 class="text-[#fff] text-[25px] font-[700] ">Для лиц, желающих научиться
                     переводить по-переводчески</h4>
-                <h5 class="text-[#fff] text-[16px] font-[400] ">Для лиц, желающих научиться
-                    переводить по-переводчески</h5>
+                <h5 class="text-[#fff] text-[16px] font-[400] ">Чтобы корректно и профессионально
+                    осуществлять переводческую деятельность</h5>
             </div>
             <div class="c-about__item c-about__item_3 relative px-[30px] py-[20px]">
-                <h4 class="text-[#fff] text-[25px] font-[700] ">Уровень английского языка
-                    должен быть ни ниже В2</h4>
+                <h4 class="text-[#fff] text-[25px] font-[700] ">Для начинающих переводчиков</h4>
+                <h5 class="text-[#fff] text-[16px] font-[400]">Чтобы повысить уровень переводческой
+                    компетенции</h5>
             </div>
             <div class="c-about__item c-about__item_4 relative px-[30px] py-[20px]">
-                <h4 class="text-[#fff] text-[25px] font-[700] ">Уровень английского языка
-                    должен быть ни ниже В2</h4>
+                <h4 class="text-[#fff] text-[25px] font-[700] ">Для преподавателей
+                    английского языка</h4>
             </div>
 
         </div>
