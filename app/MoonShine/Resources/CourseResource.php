@@ -13,6 +13,7 @@ use MoonShine\Decorations\Grid;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Relationships\BelongsTo;
+use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Resources\ModelResource;
@@ -42,7 +43,8 @@ class CourseResource extends ModelResource
                             ->disk('public')
                             ->dir('avatar'),
                         Switcher::make('Начался', 'started')->updateOnPreview(),
-                        BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource())
+                        BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource()),
+                        Slug::make('Slug','slug')->from('tittle')->unique(),
                     ])
                 ])->columnSpan(6),
             ]),

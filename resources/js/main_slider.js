@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import {Navigation, Pagination} from 'swiper/modules';
 import { Grid } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
@@ -41,6 +41,10 @@ const swiper = new Swiper('.swiper', {
         },
     },
 });
+
+
+
+
 
 
 

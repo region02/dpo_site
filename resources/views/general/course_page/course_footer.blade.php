@@ -1,4 +1,4 @@
-<section class="footer px-40 py-5 ">
+<section class="footer px-44  ">
     <div class="footer__wrapper ">
         <div class="footer__container flex flex-col max-w-[100%] sm:max-w-[80%] border-t-[2px] border-t-[#fff] border-solid gap-[30px] mt-28 pb-32">
             <ul class="nav-list flex flex-wrap gap-[20px] pt-8">

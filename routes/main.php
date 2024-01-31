@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 //Route::view('/', 'main.index')->name('main');
 Route::get('/', [\App\Http\Controllers\MainController::class, 'show']);
 Route::get('/courses', [\App\Http\Controllers\CoursesController::class, 'show']);
+//Route::get('/course/{course:slug}', [\App\Http\Controllers\CourseController::class, 'show']);
 Route::get('/course', [\App\Http\Controllers\CourseController::class, 'show']);
+
+
 
 

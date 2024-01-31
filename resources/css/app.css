@@ -76,47 +76,43 @@
     .swiper-button-next{
         transform: translateX(50%);
     }
-    .profile__body::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 18px;
-        padding: 1px;
-        background:linear-gradient(90deg,#e5e5e5,transparent);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-    }
 
-    .c-about__container{
+
+    .c-about-puzzle__container{
         display: grid;
         grid-template-areas:
             '. A'
             'B .'
             'C D';
-        grid-template-columns: 60% 40%;
+
         grid-row-gap: 30px;
-        grid-column-gap: 30px;
+        grid-column-gap: 20px;
 
     }
 
     .c-about__item_1{
         grid-area: A;
+        width: calc(100% - 40px);
     }
     .c-about__item_2{
         grid-area: B;
+        margin-left: 40px;
+
     }
     .c-about__item_3{
         grid-area: C;
+        margin-left: 0px;
+        width: calc(100% - 40px);
     }
     .c-about__item_4{
         grid-area: D;
+        margin-left: -40px;
+        width: calc(100% - 40px);
     }
 
 
-    .c-about__item::before{
+
+    .gradient-border::before{
         content: "";
         position: absolute;
         inset: 0;
@@ -129,6 +125,7 @@
         -webkit-mask-composite: xor;
         mask-composite: exclude;
     }
+
 
 
   }

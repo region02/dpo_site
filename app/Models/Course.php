@@ -19,4 +19,11 @@ class Course extends Model
     {
         return $this->belongsTo(CourseType::class);
     }
+
+    public function formattedCost()
+    {
+        $cost = str($this->cost);
+
+        return strlen($cost)>3?substr($cost,0,-3)." ".substr($cost,-3):$cost;
+    }
 }
