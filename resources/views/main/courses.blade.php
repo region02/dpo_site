@@ -121,12 +121,12 @@
                             <input id="upgoing-checkbox"
                                    onchange="document.getElementById('upgoing-checkbox').value = this.value"
                                    name="filter_started"
-                                   type="checkbox"
+                                   type="radio"
                                    @click="resetFilters = true"
                                    @isset($old_values['filter_started'])
                                        @if($old_values['filter_started'] == true) checked @endif
                                    @endisset
-                                   value="true"
+                                   value="started"
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="upgoing-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
                                 Уже идет
@@ -136,15 +136,30 @@
                             <input id="will-be-checkbox"
                                    onchange="document.getElementById('will-be-checkbox-modal').value = this.value"
                                    name="filter_started"
-                                   type="checkbox"
+                                   type="radio"
                                    @click="resetFilters = true"
-                                   value="false"
+                                   value="soon_started"
                                    @isset($old_values['filter_started'])
                                         @if($old_values['filter_started'] == false) checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
                                 Скоро начнется
+                            </label>
+                        </div>
+                        <div class="flex items-center me-4">
+                            <input id="will-be-checkbox"
+                                   onchange="document.getElementById('will-be-checkbox-modal').value = this.value"
+                                   name="filter_started"
+                                   type="radio"
+                                   @click="resetFilters = true"
+                                   value="without_date"
+                                   @isset($old_values['filter_started'])
+                                       @if($old_values['filter_started'] == false) checked @endif
+                                   @endisset
+                                   class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
+                            <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
+                                Нет даты начала
                             </label>
                         </div>
                     </div>
@@ -187,7 +202,7 @@
                                     class="opacity-0 rounded-[18px] w-full"
                                     src="{{url('img/icons/preloader.svg')}}"
                                     alt="Картинка курса предмета <<{){$course->title}}>>"
-                                    data-img="/storage/{{$course->avatar}}"
+                                    data-img="{{--/storage/--}}{{$course->avatar}}"
                                     onload="this.classList.add('opacity-100')">
                             </div>
                             <div class="card__info flex flex-col gap-3">
@@ -252,36 +267,48 @@
                     <h5 class="type_title text-[#24272B] text-[22px] font-[700] pb-5">Прием заявок</h5>
                     <div class="type__checkbox-party flex flex-col gap-3">
                         <div class="flex items-center me-4">
-                            <input id="upgoing-checkbox-modal"
+                            <input id="upgoing-checkbox"
                                    onchange="document.getElementById('upgoing-checkbox').value = this.value"
                                    name="filter_started"
-                                   form="filter-form"
-                                   type="checkbox"
+                                   type="radio"
                                    @click="resetFilters = true"
                                    @isset($old_values['filter_started'])
                                        @if($old_values['filter_started'] == true) checked @endif
                                    @endisset
-                                   value="true"
+                                   value="started"
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
-                            <label for="upgoing-checkbox-modal" class="ms-3 text-[16px] font-[400] text-[#24272B]">
+                            <label for="upgoing-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
                                 Уже идет
                             </label>
                         </div>
                         <div class="flex items-center me-4">
-                            <input
-                                   id="will-be-checkbox-modal"
-                                   onchange="document.getElementById('will-be-checkbox').value = this.value"
-                                   form="filter-form"
+                            <input id="will-be-checkbox"
+                                   onchange="document.getElementById('will-be-checkbox-modal').value = this.value"
                                    name="filter_started"
-                                   type="checkbox"
+                                   type="radio"
                                    @click="resetFilters = true"
-                                   value="false"
+                                   value="soon_started"
                                    @isset($old_values['filter_started'])
                                        @if($old_values['filter_started'] == false) checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
-                            <label for="will-be-checkbox-modal" class="ms-3 text-[16px] font-[400] text-[#24272B]">
+                            <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
                                 Скоро начнется
+                            </label>
+                        </div>
+                        <div class="flex items-center me-4">
+                            <input id="will-be-checkbox"
+                                   onchange="document.getElementById('will-be-checkbox-modal').value = this.value"
+                                   name="filter_started"
+                                   type="radio"
+                                   @click="resetFilters = true"
+                                   value="without_date"
+                                   @isset($old_values['filter_started'])
+                                       @if($old_values['filter_started'] == false) checked @endif
+                                   @endisset
+                                   class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
+                            <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
+                                Нет даты начала
                             </label>
                         </div>
                     </div>
@@ -310,7 +337,7 @@
 <footer>
     <script>
         function resetFiltersAction() {
-            if ( @if(empty($old_values)) false @else true @endif ){
+            if ( @if( empty($old_values) ) false @else true @endif ){
                 window.location.href = window.location.href.split('?')[0];
             }
             else {

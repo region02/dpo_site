@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Course extends Model
 {
-//    use HasFactory;
+    use HasFactory;
+
     protected $table = 'courses';
     protected $fillable = [
         'title', 'subtitle',
         'cost', 'avatar',
-        'started', 'slug',
+        'slug',
         'start_at','duration',
         'load', 'format',
         'section_who',

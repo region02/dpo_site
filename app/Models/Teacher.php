@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Teacher extends Model
 {
+    use HasFactory;
 
     protected $table = 'teachers';
     protected $fillable = [

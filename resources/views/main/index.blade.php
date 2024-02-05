@@ -159,7 +159,7 @@
             <ul class="flex flex-col px-3 lg:px-12">
                 @foreach($types as $type)
                     <li class=" border-b-[1px] border-[#ffffff] border-opacity-10">
-                        <a href="{{route('courses.all')}}?filter_type[]={{$type->id}}" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
+                        <a href="{{route('course.all')}}?filter_type[]={{$type->id}}" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
                             <span class="font-sans text-white text-xl font-bold tracking-wider">{{$type->text}}</span>
                             <img src="{{ url('img/icons/link_categories_main.svg') }}" alt="иконка ссылки на курс">
                         </a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\CourseType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class CourseController extends Controller
 {
@@ -36,7 +37,13 @@ class CourseController extends Controller
         }
 
         if($request->get('filter_started')){
-            $courses->where('started',$request->boolean('filter_started'));
+            match ($request->get('filter_started')){
+                'started' => $courses->where('start_at','<=', Carbon::now()),
+
+                'soon_started' => $courses->where('start_at','>', Carbon::now()),
+
+                'without_date' => $courses->whereNull('start_at'),
+            };
         }
 
         $courses = $courses->get();

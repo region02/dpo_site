@@ -42,7 +42,6 @@ class CourseResource extends ModelResource
                         Image::make('Изображение', 'avatar')
                             ->disk('public')
                             ->dir('avatar'),
-                        Switcher::make('Начался', 'started')->updateOnPreview(),
                         BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource()),
 //                        Slug::make('Slug','slug')->from('title')->unique(),
                     ])

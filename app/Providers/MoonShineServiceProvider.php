@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\CourseResource;
 use App\MoonShine\Resources\CourseTypeResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
@@ -49,15 +48,6 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new CourseTypeResource()
                 ),
             ]),
-
-
-
-
-            MenuItem::make(
-                static fn() => 'Редактор Категорий',
-                new CategoryResource()
-                )->icon('heroicons.tag'),
-
         ];
     }
 

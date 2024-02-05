@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('subtitle');
             $table->string('avatar');
             $table->foreignId('course_type_id')->constrained('course_types')->cascadeOnDelete();
-            $table->boolean('started');
 
             $table->foreignId('teacher_id')->nullable()->constrained('teachers');
             $table->string('slug');
