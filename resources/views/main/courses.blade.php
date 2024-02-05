@@ -337,7 +337,8 @@
 <footer>
     <script>
         function resetFiltersAction() {
-            if ( @if( empty($old_values) ) false @else true @endif ){
+            var oldValues = @json($old_values);
+            if ( oldValues && Object.keys(oldValues).length > 0){
                 window.location.href = window.location.href.split('?')[0];
             }
             else {
