@@ -14,15 +14,16 @@
             </div>
 
 
-            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] flex flex-col justify-center gap-[30px]" action="">
+            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] flex flex-col justify-center gap-[30px]" action="{{route('index.questions')}}" method="post">
+                @csrf
                 <div class=" relative ">
                     <label for="name" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
-                    <input type="text" id="name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
+                    <input type="text" id="name" name="name" autocomplete="full-name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
                 </div>
 
                 <div class=" radio-party flex  justify-center flex-col gap-[20px] sm:gap-[15px] sm:flex-row">
                     <div class="flex items-center me-4">
-                        <input  id="messanger-bt" type="radio" value="" name="feedback-radio"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input  id="messanger-bt" type="radio" value="мессенджер" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -40,7 +41,7 @@
                         <label for="messanger-bt" class="ms-2 text-sm font-medium text-[#fff] ">мессенджер</label>
                     </div>
                     <div class="flex items-center me-4">
-                        <input  id="email-bt" type="radio" value="" name="feedback-radio"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input  id="email-bt" type="radio" value="почта" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -58,7 +59,7 @@
                         <label for="email-bt" class="ms-2 text-sm font-medium text-[#fff] ">почта</label>
                     </div>
                     <div class="flex items-center me-4">
-                        <input  id="phone-bt" type="radio" checked value="" name="feedback-radio"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input  id="phone-bt" type="radio" checked value="телефон" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -81,8 +82,8 @@
                 </div>
 
                 <div class=" relative  ">
-                    <label for="name" id="radio-link" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">телефон</label>
-                    <input type="text" id="name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
+                    <label for="name" id="radio-link" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">телефон</label>
+                    <input type="text" id="contact" name="contact" autocomplete="phone" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 " required>
                 </div>
 
 

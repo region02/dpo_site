@@ -125,7 +125,60 @@
         -webkit-mask-composite: xor;
         mask-composite: exclude;
     }
+    .all-courses_animation{
+        background-color: rgba(255, 255, 255, .1);
+        position: relative;
+    }
+    .all-courses_animation::before{
+        background-color: rgba(255, 255, 255, .1);
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        margin: -20px;
+        border-radius: 20px;
+        border-bottom-right-radius: 95px;
+        background: rgb(218,34,255);
+        background: linear-gradient(90deg, rgba(218,34,255,1) 0%, rgba(151,51,238,1) 100%);
+        transform: scale(0%);
+        transition: all .3s;
+
+    }
+    svg.link_course_main > rect{
+        transition: all 1s;
+    }
+    .all-courses_animation:hover{
+        svg.link_course_main > rect{
+            fill: none;
+            stroke: none;
+
+        }
+
+    }
+    .all-courses_animation:hover::before{
+        transform: scale(100%);
+    }
+
+    .first-lane, .last-lane{
+        animation-duration: 3s;
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+
+    @keyframes slidein {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
 
 
 
-  }
+
+}

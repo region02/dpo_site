@@ -26,7 +26,7 @@
       @endif }">
     @include('general/header_white ')
     <main class="w-full  mt-10 px-3 lg:px-20">
-        <a href="/" class="flex gap-[10px]">
+        <a href="{{route('index.show')}}" class="flex gap-[10px]">
             <img src="{{url('img/icons/return_arrow.svg')}}">
             <h5 class="text-[#0279C1] text-[16px] font-[400]">вернуться назад</h5>
         </a>
@@ -87,7 +87,7 @@
             </div>
 
         </div>
-        <div class="courses__container flex flex-row gap-[5%]">
+        <div class="courses__container flex flex-row justify-between">
             <form id="filter-form" method="GET" action="">
             <div class="courses__sidebar hidden xl:flex flex-col gap-10">
                 <div class="sidebar__type">
@@ -149,26 +149,30 @@
                         </div>
                     </div>
                 </div>
-            </div>
-                <button x-show="resetFilters" x-cloak form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
+                <div class="flex flex-col  gap-4">
+                    <button  form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
                                 text-[16px] text-[#fff] px-[20px] py-[10px] w-full
                                  items-center justify-center rounded-[100px] hidden xl:flex" type="submit">
-                    показать
-                </button>
-                <button
-                    x-show="resetFilters" x-cloak
-                    @click.prevent="resetFiltersAction()"
-                    form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
+                        показать
+                    </button>
+
+                    <button
+                        x-cloak
+                        @click.prevent="resetFiltersAction()"
+                        form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
                                 text-[16px] text-[#fff] px-[20px] py-[10px] w-full
                                 items-center justify-center rounded-[100px] hidden xl:flex" type="reset">
-                    сбросить фильтры
-                </button>
+                        сбросить фильтры
+                    </button>
+                </div>
+            </div>
+
             </form>
             <div class="courses__content">
-                <div class="courses-list grid grid-cols-1 md:grid-cols-2
+                <div x-data class="courses-list grid grid-cols-1 md:grid-cols-2 min-[1700px]:grid-cols-3
                             gap-x-0 sm:gap-x-[20px] gap-y-[15px] sm:gap-y-[50px]">
                     @foreach($courses as $course)
-                        <div class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
+                        <div x-intersect.threshold.50="$refs.course_img_{{$course->id}}.src = $refs.course_img_{{$course->id}}.dataset.img" class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
                             <div class="card__body relative">
                                 <div class="card__type">
                                     <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
@@ -178,7 +182,13 @@
                                         {{$course->courseType->text}}
                                     </h5>
                                 </div>
-                                <img class="rounded-[18px]" src="/storage/{{$course->avatar}}" alt="">
+                                <img
+                                    x-ref="course_img_{{$course->id}}"
+                                    class="opacity-0 rounded-[18px] w-full"
+                                    src="{{url('img/icons/preloader.svg')}}"
+                                    alt="Картинка курса предмета <<{){$course->title}}>>"
+                                    data-img="/storage/{{$course->avatar}}"
+                                    onload="this.classList.add('opacity-100')">
                             </div>
                             <div class="card__info flex flex-col gap-3">
                                 <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
@@ -293,6 +303,7 @@
         </div>
 
     </div>
+
     <div id="modal-overlay" class="filter-modal__overlay fixed top-0 bottom-0 left-0 right-0 z-20 bg-[#24272B] opacity-[0.5] hidden"></div>
 </body>
 

@@ -131,4 +131,6 @@ return [
         ],
     ],
 
+    'to_address' => env('MAIL_FEEDBACK_ADDRESS','default@default.default')
+
 ];

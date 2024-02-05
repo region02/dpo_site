@@ -44,7 +44,7 @@ class CourseResource extends ModelResource
                             ->dir('avatar'),
                         Switcher::make('Начался', 'started')->updateOnPreview(),
                         BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource()),
-                        Slug::make('Slug','slug')->from('tittle')->unique(),
+//                        Slug::make('Slug','slug')->from('title')->unique(),
                     ])
                 ])->columnSpan(6),
             ]),

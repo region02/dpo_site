@@ -13,12 +13,32 @@ class Course extends Model
     protected $fillable = [
         'title', 'subtitle',
         'cost', 'avatar',
-        'started',
+        'started', 'slug',
+        'start_at','duration',
+        'load', 'format',
+        'section_who',
+        'section_about_what',
+        'section_result',
+        'section_how_it_goes',
+        'section_schedule',
+        'cost_description',
+    ];
+    protected $casts = [
+        'start_at'=>'date',
+        'section_who'=>'array',
+        'section_result'=>'array',
+        'section_how_it_goes'=>'array',
+        'section_schedule'=>'array',
     ];
     public function courseType (): BelongsTo
     {
         return $this->belongsTo(CourseType::class);
     }
+    public function teacher (): BelongsTo
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
 
     public function formattedCost()
     {

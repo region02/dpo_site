@@ -5,37 +5,53 @@
         <div class="swiper-wrapper swiper-wrapper_flex ">
 
             <div class="swiper-slide swiper-slide_flex h-auto">
-                <div class="slide__card relative bg-white bg-opacity-10 rounded-[20px] rounded-br-[95px]
-                            max-w-[240px] h-[168px] flex justify-between p-5
+                <a href="{{route('courses.all')}}" class="slide__card all-courses_animation relative  rounded-[20px] rounded-br-[95px]
+                            max-w-[230px] h-[168px] flex justify-between p-5
                             min-[380px]:max-w-[300px] min-[380px]:h-[210px]
-                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                    <h3 class="
+                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]
+                            border-1 border-solid border-transparent hover:border-[#ffffff]">
+                    <h3 class=" z-10
                                w-[calc(100%-80px)]
                                min-[380px]:w-[calc(100%-110px)]
                                min-[480px]:w-[calc(100%-130px)]
 
-                               uppercase text-[#fff] text-[20px] sm:text-[30px] font-[600] ">смотреть все курсы</h3>
+                               uppercase text-[#fff] text-[20px] sm:text-[30px] font-[600] ">Смотреть все курсы</h3>
 
-                    <img class="w-[70px]
+                    <div class="w-[70px]
                                 min-[380px]:w-[80px]
                                 min-[480px]:w-[100px]
+                                absolute  right-0 top-0 z-10"  >
+                        <svg class="link_course_main  "  viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="url(#paint0_linear_791_365)" stroke="white"/>
+                            <path d="M33.1531 23.12H49.2298V39.2346" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M49.2301 23.12L27.7693 44.5808" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.75 56.6005C30.4996 61.5297 46.5004 61.5297 61.25 56.6005" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="paint0_linear_791_365" x1="0" y1="39" x2="78" y2="39" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#DA22FF"/>
+                                    <stop offset="1" stop-color="#9733EE"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
 
-                                absolute  right-0 top-0" src="{{url('img/icons/link_courses_main.svg')}}" alt="">
+                    </div>
 
-                </div>
+                </a>
             </div>
             @foreach($courses as $course)
                 <div class="swiper-slide swiper-slide_flex h-auto">
-                    <div class="slide__card relative
-                            max-w-[240px] h-[168px]
+                    <div class="slide__card relative border-1 border-solid border-transparent
+                            max-w-[230px] h-[168px]
                             min-[380px]:max-w-[300px] min-[380px]:h-[210px]
                             min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
-                        <img class="absolute z-0 rounded-[20px]
-                                    max-w-[240px] h-[168px]
+                        <img class="z-0 rounded-[20px]
+                                    max-w-[230px] h-[168px]
                                     min-[380px]:max-w-[300px] min-[380px]:h-[210px]
                                     min-[480px]:max-w-[400px] min-[480px]:h-[280px]"
-                             src="/storage/{{$course->avatar}}">
-                        <h4 class="relative z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">{{$course->title}} </h4>
+                             loading="lazy"
+                             src="/storage/{{$course->avatar}}" alt="курс">
+                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        <h4 class="absolute top-0 z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">{{$course->title}} </h4>
                     </div>
                 </div>
             @endforeach
@@ -126,8 +142,6 @@
 
 @push('scripts')
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-
-
 @endpush
 </div>
 

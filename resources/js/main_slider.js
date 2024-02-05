@@ -16,8 +16,19 @@ const swiper = new Swiper('.swiper', {
         prevEl: ".swiper-button-prev",
     },
 
+    lazyPreloadPrevNext: 2,
+
+    lazy: true,
+
 
     breakpoints: {
+        1800: {
+            slidesPerView: 4,
+            grid: {
+                rows: 2,
+                fill: 'row',
+            },
+        },
         1300: {
             slidesPerView: 3,
             grid: {

@@ -1,11 +1,11 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-27FTeYA5.css",
+    "file": "assets/app-3YHnNzcs.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-ne9W_6h6.js",
+    "file": "assets/app--b_nlF3t.js",
     "imports": [
       "resources/js/main_slider.js",
       "resources/js/feedback.js"
@@ -19,7 +19,7 @@
     "src": "resources/js/courses.js"
   },
   "resources/js/feedback.js": {
-    "file": "assets/feedback-JcJwViTt.js",
+    "file": "assets/feedback-TVV259WY.js",
     "isEntry": true,
     "src": "resources/js/feedback.js"
   },
@@ -27,7 +27,7 @@
     "css": [
       "assets/main_slider-pjvkTkke.css"
     ],
-    "file": "assets/main_slider-e4OHCSlI.js",
+    "file": "assets/main_slider-8IayCWk6.js",
     "isEntry": true,
     "src": "resources/js/main_slider.js"
   }
