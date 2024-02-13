@@ -160,12 +160,12 @@
         transform: scale(100%);
     }
 
-    .first-lane, .last-lane{
-        animation-duration: 3s;
-        animation-name: slidein;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+    /*.first-lane, .last-lane{*/
+    /*    animation-duration: 3s;*/
+    /*    animation-name: slidein;*/
+    /*    animation-iteration-count: infinite;*/
+    /*    animation-direction: alternate;*/
+    /*}*/
 
 
     @keyframes slidein {
@@ -176,6 +176,44 @@
         to {
             transform: translateX(100%);
         }
+    }
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        75% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+    }
+
+    .first-lane, .last-lane {
+        animation: fadeInOut 4s infinite;
+    }
+
+
+    .profile__item:not(:last-child)::after{
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 90px;
+        width: 1px;
+        background-color: #ffffff33;
+        margin: auto 0;
+        margin-right: 10px;
+        transform: translateY(25%);
+
+
     }
 
 

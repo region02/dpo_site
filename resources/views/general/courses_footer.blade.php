@@ -23,7 +23,7 @@
                 <img  src="{{url("img/icons/logo_blue_only.svg")}}">
                 <h5 class="text-[12px] xs:text-lg font-[400] text-[#0279C1] self-center">Российский университет дружбы народов
                     имени Патриса Лумумбы
-                    2023</h5>
+                    </h5>
             </div>
         </div>
     </div>

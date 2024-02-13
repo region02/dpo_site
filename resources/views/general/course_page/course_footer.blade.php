@@ -1,7 +1,7 @@
-<section class="footer px-44  ">
+<section class="footer px-5 sm:px-8 xl:px-44  ">
     <div class="footer__wrapper ">
-        <div class="footer__container flex flex-col max-w-[100%] sm:max-w-[80%] border-t-[2px] border-t-[#fff] border-solid gap-[30px] mt-28 pb-32">
-            <ul class="nav-list flex flex-wrap gap-[20px] pt-8">
+        <div class="footer__container flex flex-col  border-t-[2px] border-t-[#fff] border-solid gap-[30px] mt-14 sm:mt-28 pb-16 sm:pb-32">
+            <ul class="nav-list flex flex-wrap gap-[15px] sm:gap-[20px] pt-8 max-w-[100%] sm:max-w-[80%]">
                 <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">О курсах</li>
                 <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Повышение квалификации</li>
                 <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Профессиональная переподготовка</li>
@@ -23,7 +23,7 @@
                 <img src="{{url("img/icons/logo_only.svg")}}">
                 <h5 class="text-[12px] xs:text-lg font-[400] text-[#fff] self-center">Российский университет дружбы народов
                     имени Патриса Лумумбы
-                    2023</h5>
+                </h5>
             </div>
         </div>
     </div>

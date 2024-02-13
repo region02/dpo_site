@@ -40,7 +40,7 @@
             </div>
             @foreach($courses as $course)
                 <div class="swiper-slide swiper-slide_flex h-auto">
-                    <div class="slide__card relative border-1 border-solid border-transparent
+                    <a href="{{route('course.show',$course)}}" class="slide__card relative border-1 border-solid border-transparent
                             max-w-[230px] h-[168px]
                             min-[380px]:max-w-[300px] min-[380px]:h-[210px]
                             min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
@@ -49,10 +49,10 @@
                                     min-[380px]:max-w-[300px] min-[380px]:h-[210px]
                                     min-[480px]:max-w-[400px] min-[480px]:h-[280px]"
                              loading="lazy"
-                             src="{{--/storage/--}}{{$course->avatar}}" alt="курс">
+                             src="/storage/{{$course->avatar}}" alt="курс">
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         <h4 class="absolute top-0 z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">{{$course->title}} </h4>
-                    </div>
+                    </a>
                 </div>
             @endforeach
 

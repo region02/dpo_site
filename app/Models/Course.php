@@ -27,9 +27,11 @@ class Course extends Model
     protected $casts = [
         'start_at'=>'date',
         'section_who'=>'array',
+        'section_about_what'=>'array',
         'section_result'=>'array',
         'section_how_it_goes'=>'array',
         'section_schedule'=>'array',
+        'cost_description'=>'array',
     ];
     public function courseType (): BelongsTo
     {

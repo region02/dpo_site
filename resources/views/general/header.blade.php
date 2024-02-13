@@ -10,4 +10,8 @@
         курсы
     </a>
   </div>
+    <a href="{{route('course.all')}}" class="uppercase font-sans text-white text-xl font-bold
+                                             tracking-wider flex justify-center md:hidden pt-[15px] ">
+        курсы
+    </a>
 </nav>

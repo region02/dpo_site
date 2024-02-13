@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\MoonShine\Resources\CourseResource;
 use App\MoonShine\Resources\CourseTypeResource;
+use App\MoonShine\Resources\TeacherResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -46,6 +47,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 MenuItem::make(
                     static fn() => 'Типы',
                     new CourseTypeResource()
+                ),
+                MenuItem::make(
+                    static fn() => 'Преподаватель',
+                    new TeacherResource()
                 ),
             ]),
         ];

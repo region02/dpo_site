@@ -87,7 +87,7 @@
             </div>
 
         </div>
-        <div class="courses__container flex flex-row justify-between">
+        <div class="courses__container flex flex-row justify-between gap-0 xl:gap-24">
             <form id="filter-form" method="GET" action="">
             <div class="courses__sidebar hidden xl:flex flex-col gap-10">
                 <div class="sidebar__type">
@@ -124,7 +124,7 @@
                                    type="radio"
                                    @click="resetFilters = true"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == true) checked @endif
+                                       @if($old_values['filter_started'] == 'started') checked @endif
                                    @endisset
                                    value="started"
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
@@ -140,7 +140,7 @@
                                    @click="resetFilters = true"
                                    value="soon_started"
                                    @isset($old_values['filter_started'])
-                                        @if($old_values['filter_started'] == false) checked @endif
+                                        @if($old_values['filter_started'] == 'soon_started') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
@@ -155,7 +155,7 @@
                                    @click="resetFilters = true"
                                    value="without_date"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == false) checked @endif
+                                       @if($old_values['filter_started'] == 'without_date') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
@@ -185,9 +185,9 @@
             </form>
             <div class="courses__content">
                 <div x-data class="courses-list grid grid-cols-1 md:grid-cols-2 min-[1700px]:grid-cols-3
-                            gap-x-0 sm:gap-x-[20px] gap-y-[15px] sm:gap-y-[50px]">
+                            gap-x-0 sm:gap-x-[20px] gap-y-[30px] sm:gap-y-[50px]">
                     @foreach($courses as $course)
-                        <div x-intersect.threshold.50="$refs.course_img_{{$course->id}}.src = $refs.course_img_{{$course->id}}.dataset.img" class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
+                        <a href="{{route('course.show',$course)}}" x-intersect.threshold.50="$refs.course_img_{{$course->id}}.src = $refs.course_img_{{$course->id}}.dataset.img" class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
                             <div class="card__body relative">
                                 <div class="card__type">
                                     <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
@@ -202,11 +202,11 @@
                                     class="opacity-0 rounded-[18px] w-full"
                                     src="{{url('img/icons/preloader.svg')}}"
                                     alt="Картинка курса предмета <<{){$course->title}}>>"
-                                    data-img="{{--/storage/--}}{{$course->avatar}}"
+                                    data-img="/storage/{{$course->avatar}}"
                                     onload="this.classList.add('opacity-100')">
                             </div>
-                            <div class="card__info flex flex-col gap-3">
-                                <h4 class="card__title text-[#24272B] text-[25px] font-[700]">
+                            <div class="card__info flex flex-col gap-1 sm:gap-3">
+                                <h4 class="card__title text-[#24272B] text-[25px] font-[700] leading-7 sm:leading-[2.25rem]">
                                     {{$course->title}}
                                 </h4>
                                 <h5 class="card__subtitle text-[#24272B] text-[20px] font-[400]">
@@ -216,7 +216,7 @@
                                     {{$course->formattedCost()}} ₽
                                 </h4>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
 
@@ -273,7 +273,7 @@
                                    type="radio"
                                    @click="resetFilters = true"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == true) checked @endif
+                                       @if($old_values['filter_started'] == 'started') checked @endif
                                    @endisset
                                    value="started"
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
@@ -289,7 +289,7 @@
                                    @click="resetFilters = true"
                                    value="soon_started"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == false) checked @endif
+                                       @if($old_values['filter_started'] == 'soon_started') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
@@ -304,7 +304,7 @@
                                    @click="resetFilters = true"
                                    value="without_date"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == false) checked @endif
+                                       @if($old_values['filter_started'] == 'without_date') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
@@ -313,17 +313,18 @@
                         </div>
                     </div>
                 </div>
-                <button x-show="resetFilters" x-cloak form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
+                <button  form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
                                 text-[16px] text-[#fff] px-[20px] py-[10px] w-full
-                                flex items-center justify-center rounded-[100px] " type="submit">
+                                 items-center justify-center rounded-[100px] flex xl:hidden" type="submit">
                     показать
                 </button>
+
                 <button
-                    x-show="resetFilters" x-cloak
+                    x-cloak
                     @click.prevent="resetFiltersAction()"
                     form="filter-form" class="filter-modal__bt bg-gradient-to-r from-[#FF512F] to-[#DD2476]
                                 text-[16px] text-[#fff] px-[20px] py-[10px] w-full
-                                flex items-center justify-center rounded-[100px] " type="reset">
+                                items-center justify-center rounded-[100px] flex xl:hidden" type="reset">
                     сбросить фильтры
                 </button>
             </div>

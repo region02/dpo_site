@@ -15,9 +15,9 @@ class CourseTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'text' => $this->faker->word,
-            'color_from' => $this->faker->hexColor,
-            'color_to' => $this->faker->hexColor,
+            'text' => fake()->unique()->sentence(random_int(1,5)),
+            'color_from' => fake()->hexColor(),
+            'color_to' => fake()->hexColor(),
 
         ];
     }

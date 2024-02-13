@@ -1,11 +1,11 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-3YHnNzcs.css",
+    "file": "assets/app-9uiABrFn.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app--b_nlF3t.js",
+    "file": "assets/app-DRLNbh1o.js",
     "imports": [
       "resources/js/main_slider.js",
       "resources/js/feedback.js"

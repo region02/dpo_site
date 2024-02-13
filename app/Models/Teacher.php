@@ -16,6 +16,10 @@ class Teacher extends Model
         'about', 'avatar',
 
     ];
+
+    protected $casts =[
+        'about' => 'array',
+    ];
     public function courses(): HasMany
     {
         return $this->hasMany( Course::class);

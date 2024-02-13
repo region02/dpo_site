@@ -29,7 +29,7 @@
                             border-[1px] border-[#ffffff] border-opacity-10
                             pt-[6.5rem] pb-[6.5rem]  ">
                     <div class="1-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
-                        <h3 class="uppercase font-sans text-[#E5E5E5]
+                        <h3 class="first-lane uppercase font-sans text-[#E5E5E5]
                                    text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                                    max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
                                    sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
@@ -47,18 +47,18 @@
                                     md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                     lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
                                     xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]">
-                            обучение для
+                            обучение
                         </h3>
                     </div>
                     <div class="3-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
-                        <h3 class="uppercase font-sans text-[#E5E5E5]
+                        <h3 class="last-lane uppercase font-sans text-[#E5E5E5]
                                     text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                                     max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
                                     sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
                                     md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                     lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
                                     xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]">
-                            вас
+                            для вас
                         </h3>
                     </div>
                 </div>
