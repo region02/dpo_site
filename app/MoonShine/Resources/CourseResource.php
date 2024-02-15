@@ -17,6 +17,7 @@ use MoonShine\Fields\Json;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
+use MoonShine\Fields\Relationships\BelongsToMany;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
@@ -43,7 +44,7 @@ class CourseResource extends ModelResource
                         Number::make('Стоимость', 'cost'),
                         Image::make('Изображение', 'avatar')
                             ->disk('public')
-                            ->dir('avatar'),
+                            ->dir('course/avatar'),
                         BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource()),
                         Slug::make('Slug','slug')->from('title')->unique(),
                         Date::make('Дата начала','start_at'),
@@ -106,10 +107,10 @@ class CourseResource extends ModelResource
                             ->creatable()
                             ->removable(),
 
-                        BelongsTo::make('Преподаватель', 'teacher', resource: new TeacherResource())
+                        BelongsToMany::make('Преподаватель', 'teachers', resource: new TeacherResource())
                             ->required()
                             ->asyncSearch()
-                            ->withImage('avatar', 'public', 'teacher-avatar'),
+                            ->withImage('avatar', 'public', 'teacher/avatar'),
 
                         Json::make('Описание цены', 'cost_description')
                             ->fields([

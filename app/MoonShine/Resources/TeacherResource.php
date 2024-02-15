@@ -9,6 +9,7 @@ use App\Models\Teacher;
 
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
+use MoonShine\Fields\Relationships\BelongsToMany;
 use MoonShine\Fields\Relationships\HasMany;
 use MoonShine\Fields\Relationships\HasOne;
 use MoonShine\Fields\Text;
@@ -32,7 +33,7 @@ class TeacherResource extends ModelResource
                 Text::make('ФИО','name')->default('Фамилия Имя Отчество'),
                 Image::make('Аватар', 'avatar')
                     ->disk('public')
-                    ->dir('teacher-avatar'),
+                    ->dir('teacher/avatar'),
                 Text::make('Должность', 'position')->default('Должность преподавателя'),
                 Json::make('О себе', 'about')
                     ->fields([
@@ -40,7 +41,9 @@ class TeacherResource extends ModelResource
                     ])
                     ->creatable()
                     ->removable(),
-                HasMany::make('Курсы','courses', resource:  new CourseResource())
+                BelongsToMany::make('Курсы','courses', resource:  new CourseResource())
+                    ->asyncSearch()
+                    ->withImage('avatar', 'public', 'course/avatar')
 
             ]),
         ];

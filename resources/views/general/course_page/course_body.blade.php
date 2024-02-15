@@ -232,8 +232,10 @@
             @endforeach
         </ul>
     </section>
+    @foreach($course->teacherAssoc as $teacherAssoc)
+        @include('general.course_page.teacher',['teacher' => $teacherAssoc->teacher])
+    @endforeach
 
-    @include('general.course_page.teacher',['teacher' => $course->teacher])
 
     <section class="cost mt-28">
         <div class="gradient-border px-[25px] py-[20px] relative

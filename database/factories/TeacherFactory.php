@@ -15,10 +15,24 @@ class TeacherFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'position' => $this->faker->word,
-            'about' => $this->faker->paragraph,
-            'avatar' => $this->faker->imageUrl(),
+            'name' => fake()->name,
+            'position' => fake()->paragraph(1,2),
+            'about' => function() {
+                $res = [];
+                for ($i=0;$i<rand(2,6);$i++) {
+                    $res[] = [
+                        'content' => fake()->paragraph(1,4),
+                    ];
+                }
+                return $res;
+            },
+            'avatar' => "teacher/avatar/" . fake()->image(
+                dir: storage_path('app/public/teacher/avatar'),
+                width: 129,
+                height: 129,
+                category: 'animals',
+                fullPath: false,
+            ),
         ];
     }
 }
