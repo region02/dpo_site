@@ -156,12 +156,107 @@
 
         @include('general/main_slider')
         <section id="categories" class="categories">
-            <ul class="flex flex-col px-3 lg:px-12">
+            <ul class="flex flex-col px-3 lg:px-12 mt-10">
                 @foreach($types as $type)
-                    <li class=" border-b-[1px] border-[#ffffff] border-opacity-10">
-                        <a href="{{route('course.all')}}?filter_type[]={{$type->id}}" class="flex flex-row content-center justify-between items-center font-semibold p-5 cursor-pointer">
-                            <span class="font-sans text-white text-xl font-bold tracking-wider">{{$type->text}}</span>
-                            <img src="{{ url('img/icons/link_categories_main.svg') }}" alt="иконка ссылки на курс">
+                    <style>
+                        .gradient-change-{{ $loop->index }}{
+                            transform: scale(0);
+
+                        }
+                        .type__avatar{
+                            transition: all .5s;
+                            transform: scale(0);
+
+                            border-radius: 30px;
+                        }
+                        .avatar__bg-{{$type->id}}{
+                            background: linear-gradient(to right, {{$type->color_from}} 0%, {{$type->color_to}} 100%);
+                        }
+                        .type__avatar img{
+                            transition: all .5s;
+                            border-radius: 30px;
+                            margin: 0;
+
+                        }
+                        .gradient-change-circle-{{ $loop->index }}{
+
+                            transition: all .5s;
+                            transform: scale(0%);
+                        }
+                        .type__link:hover{
+
+                            .gradient-change-{{ $loop->index }}{
+                                transition: all .5s;
+                                transform: scale(100%);
+                            }
+                            .type__avatar{
+
+                                transform: scale(100%);
+                            }
+                            .gradient-change-circle-{{ $loop->index }}{
+
+                                transform: scale(100%);
+                            }
+
+                        }
+                        @media screen and (max-width:800px)  {
+                            .gradient-change-circle-{{ $loop->index }}{
+                                transform: scale(0%) !important;
+                            }
+                        }
+                        .type__avatar:hover img{
+
+                            margin: -10px;
+                        }
+                        .gradient-change-{{ $loop->index }} rect {
+                            fill: url(#paint{{ $type->id }}_linear);
+                        }
+                        .gradient-change-circle-{{ $loop->index }} circle {
+                            fill: url(#paint{{ $type->id }}_linear);
+                        }
+
+                    </style>
+                    <li class="border-b-[1px] border-[#ffffff] border-opacity-10">
+                        <a href="{{ route('course.all') }}?filter_type[]={{ $type->id }}" class="flex flex-row content-center justify-between items-center font-semibold p-5 gap-[10px] cursor-pointer type__link">
+                            <div class=" w-[80%] flex items-center gap-[20px]">
+                                <span class="font-sans text-white text-lg sm:text-xl font-bold tracking-wider">
+                                    {{ $type->text }}
+                                </span>
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="gradient-change-circle-{{ $loop->index }} ">
+                                    <circle cx="7.5" cy="7.5" r="7.5" fill="url(#paint{{ $type->id }}_linear_circle)"/>
+                                    <defs>
+                                        <linearGradient id="paint{{ $type->id }}_linear_circle" x1="0" y1="39" x2="78" y2="39" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="{{ $type->color_from }}"/>
+                                            <stop offset="1" stop-color="{{ $type->color_to }}"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="relative w-[50px] sm:w-[70px] type__pics">
+                                <svg width="100%" height="auto" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                    <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="none" stroke="none"/>
+                                </svg>
+                                <svg width="100%" height="auto" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" class=" absolute top-0 z-20">
+                                    <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="none" stroke="white"/>
+                                    <path d="M33.1531 23.12H49.2298V39.2346" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M49.2301 23.12L27.7693 44.5808" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.75 56.6005C30.4996 61.5297 46.5004 61.5297 61.25 56.6005" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                                </svg>
+                                <svg width="100%" height="auto" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" class="gradient-change-{{ $loop->index }} absolute top-0 z-10  ">
+                                    <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="url(#paint{{ $type->id }}_linear);" stroke="none"/>
+                                    <defs>
+                                        <linearGradient id="paint{{ $type->id }}_linear" x1="0" y1="39" x2="78" y2="39" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="{{ $type->color_from }}"/>
+                                            <stop offset="1" stop-color="{{ $type->color_to }}"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+
+                                <div class="absolute right-[120px] w-[165px] h-[165px] top-[-90%] hidden min-[850px]:block  type__avatar avatar__bg-{{$type->id}}">
+                                    <img width="100%" src="{{url('img/test_link_bg.png')}}">
+                                </div>
+                            </div>
                         </a>
                     </li>
                 @endforeach

@@ -20,7 +20,7 @@
                     <label for="name" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
                     <input type="text" id="name" name="name" autocomplete="full-name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
                 </div>
-
+                <h5 class="text-[#fff] text-[18px] font-[600]">Предпочитаемый способ связи:</h5>
                 <div class=" radio-party flex  justify-center flex-col gap-[20px] sm:gap-[15px] sm:flex-row">
                     <div class="flex items-center me-4">
                         <input  id="messanger-bt" type="radio" value="мессенджер" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
