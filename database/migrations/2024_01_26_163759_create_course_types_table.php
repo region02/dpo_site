@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('text');
             $table->string('color_from');
             $table->string('color_to');
+            $table->string('avatar');
             $table->timestamps();
         });
     }

@@ -18,6 +18,13 @@ class CourseTypeFactory extends Factory
             'text' => fake()->unique()->sentence(random_int(1,5)),
             'color_from' => fake()->hexColor(),
             'color_to' => fake()->hexColor(),
+            'avatar' => "course_type/avatar/" . fake()->image(
+                    dir: storage_path('app/public/course_type/avatar'),
+                    width: 165,
+                    height: 165,
+                    category: 'animals',
+                    fullPath: false,
+                ),
 
         ];
     }
