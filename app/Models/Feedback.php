@@ -12,6 +12,7 @@ class Feedback extends Model
     protected $fillable = [
         'name',
         'feedback_type',
-        'contact'
+        'contact',
+        'question'
     ];
 }

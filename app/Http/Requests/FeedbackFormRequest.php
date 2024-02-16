@@ -14,7 +14,8 @@ class FeedbackFormRequest extends FormRequest
         return [
             'name' => ['required','string', 'max:50'],
             'feedback_type' => ['required','in:мессенджер,почта,телефон'],
-            'contact' => ['required','string', 'max:255']
+            'contact' => ['required','string', 'max:255'],
+            'question' => ['required','string', 'max:255']
         ];
     }
 }
