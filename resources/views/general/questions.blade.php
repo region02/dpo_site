@@ -20,7 +20,7 @@
                     <label for="name" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
                     <input type="text" id="name" name="name" autocomplete="full-name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
                 </div>
-
+                <h5 class="text-[#fff] text-[18px] font-[600]">Предпочитаемый способ связи:</h5>
                 <div class=" radio-party flex  justify-center flex-col gap-[20px] sm:gap-[15px] sm:flex-row">
                     <div class="flex items-center me-4">
                         <input  id="messanger-bt" type="radio" value="мессенджер" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
@@ -86,6 +86,11 @@
                     <input type="text" id="contact" name="contact" autocomplete="phone" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 " required>
                 </div>
 
+                <div class=" relative  ">
+                    <label for="question" id="radio-link" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">вопрос</label>
+                    <textarea type="text" id="question" name="question" autocomplete="off" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] " placeholder="У меня возник вопрос по поводу..." required></textarea>
+                </div>
+
 
                 <button type="submit" class="text-white  w-[141px] bg-gradient-to-r from-[#DA22FF] to-[#9733EE] px-5 py-2.5 text-center rounded-[20px] mx-auto lg:mx-0">Отправить</button>
             </form>
@@ -102,10 +107,10 @@
                 <div class="feedback__call flex gap-5">
 
                     <h5 class=" text-[16px] xs:text-lg font-medium text-[#fff]">Мы в соц. сетях</h5>
-                    <a href="#" class="flex items-center">
+                    <a href="https://t.me/s/rudnffkiya" class="flex items-center">
                         <img src="{{url("img/icons/feedback__TG.svg")}}">
                     </a>
-                    <a href="#" class="flex items-center">
+                    <a href="https://vk.com/rudnffkiya?ysclid=lsott5imcy57472619" class="flex items-center">
                         <img src="{{url("img/icons/feedback__VK.svg")}}">
                     </a>
                 </div>

@@ -78,17 +78,31 @@
     }
 
 
+    /*.c-about-puzzle__container{*/
+    /*    display: grid;*/
+    /*    grid-template-areas:*/
+    /*        '. A'*/
+    /*        'B .'*/
+    /*        'C D';*/
+
+    /*    grid-row-gap: 30px;*/
+    /*    grid-column-gap: 20px;*/
+
+    /*}*/
     .c-about-puzzle__container{
         display: grid;
-        grid-template-areas:
-            '. A'
-            'B .'
-            'C D';
-
-        grid-row-gap: 30px;
-        grid-column-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        gap: 20px;
+    }
+    @media screen and (max-width: 1000px) {
+        .c-about-puzzle__container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Два столбца */
+            grid-gap: 20px; /* Расстояние между элементами (при необходимости) */
+        }
 
     }
+
 
     .c-about__item_1{
         grid-area: A;

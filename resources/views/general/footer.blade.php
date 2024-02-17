@@ -2,12 +2,11 @@
     <div class="footer__wrapper px-3 lg:px-12">
         <div class="footer__container flex flex-col max-w-[100%]  border-t-[2px] border-t-[#fff] border-solid gap-[30px] mt-28 pb-32">
             <ul class="nav-list flex flex-wrap gap-[20px] max-w-[100%] sm:max-w-[70%] pt-8">
-                <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">О курсах</li>
-                <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Повышение квалификации</li>
-                <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Профессиональная переподготовка</li>
-                <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Летние/Зимние/Осенние/Весенние ШКОЛЫ</li>
-                <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Курсы для детей</li>
-                <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">Вебинары</li>
+                @foreach($types as $type)
+                    <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">{{$type->text}}</li>
+                @endforeach
+
+
             </ul>
             <div class="footer__contacts flex flex-col gap-[25px] md:flex-row md:gap-[40px] ">
                 <div class="feedback__call flex gap-3">
@@ -25,6 +24,9 @@
                     имени Патриса Лумумбы
                     </h5>
             </div>
+            <h3 style="font-size: 12px; text-decoration: none; color: #d3d3d3;">This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </h3>
         </div>
     </div>
 </section>

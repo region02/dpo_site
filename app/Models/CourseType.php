@@ -12,7 +12,7 @@ class CourseType extends Model
 
     protected $table = 'course_types';
     protected $fillable = [
-        'text', 'color_from','color_to',
+        'text', 'color_from','color_to', 'avatar'
     ];
     public function courses(): HasMany
     {

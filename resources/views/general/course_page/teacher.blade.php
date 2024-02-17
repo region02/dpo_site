@@ -8,7 +8,7 @@
         <div class="teacher__profile flex flex-col px-4 sm:px-[25px]">
             <div class="teacher__title flex flex-row gap-[20px] items-center ">
                 <div class="teacher__avatar w-[129px] h-[129px]">
-                    <img class="max-w-full h-full" src="{{url("storage/$teacher->avatar")}}" alt="">
+                    <img class="max-w-full h-full rounded-[20px]" src="{{url("storage/$teacher->avatar")}}" alt="">
                 </div>
                 <h4 class="text-[#fff] text-[20px] sm:text-[25px] font-[700] ">
                     {{explode(" ",$teacher->name)[0]}} <br>
@@ -18,11 +18,11 @@
             <div class="teacher__content">
                 <ul class="timetable__container mt-8">
 
-                    <li class="timetable__item relative border-t border-[#dbdbdb33] " x-data="{ selected: null, IsVisible: true }">
+                    <li class="timetable__item relative border-t border-[#dbdbdb33] " x-data="{ selected: 1, IsVisible: true }">
 
                         <button class="timetable__head w-full px-4 sm:px-8 py-2 sm:py-6 text-left" type="button" @click="selected !== 1 ? selected = 1 : selected = null; IsVisible = !IsVisible">
                             <div class="flex items-center justify-between">
-                                <h4 x-bind:style="IsVisible ? 'font-size:20px' : 'font-size:25px' "  class="text-[#fff]  font-[700] uppercase transition-[font-size] duration-150 ">
+                                <h4 x-bind:style="IsVisible ? 'font-size:25px' : 'font-size:20px' "  class="text-[#fff]  font-[700] uppercase transition-[font-size] duration-150 ">
                                     Должность
                                 </h4>
                                 <span class="ico-plus">

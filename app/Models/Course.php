@@ -49,6 +49,11 @@ class Course extends Model
         return $this->belongsToMany(Teacher::class, 'courses_teachers');
     }
 
+    public function users(): HasMany
+    {
+        return $this->hasMany(UserCourse::class);
+    }
+
 
     public function formattedCost()
     {

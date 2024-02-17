@@ -118,21 +118,6 @@
                     <h5 class="type_title text-[#24272B] text-[22px] font-[700] pb-5">Прием заявок</h5>
                     <div class="type__checkbox-party flex flex-col gap-3">
                         <div class="flex items-center me-4">
-                            <input id="upgoing-checkbox"
-                                   onchange="document.getElementById('upgoing-checkbox').value = this.value"
-                                   name="filter_started"
-                                   type="radio"
-                                   @click="resetFilters = true"
-                                   @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == 'started') checked @endif
-                                   @endisset
-                                   value="started"
-                                   class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
-                            <label for="upgoing-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
-                                Уже идет
-                            </label>
-                        </div>
-                        <div class="flex items-center me-4">
                             <input id="will-be-checkbox"
                                    onchange="document.getElementById('will-be-checkbox-modal').value = this.value"
                                    name="filter_started"
@@ -140,11 +125,11 @@
                                    @click="resetFilters = true"
                                    value="soon_started"
                                    @isset($old_values['filter_started'])
-                                        @if($old_values['filter_started'] == 'soon_started') checked @endif
+                                       @if($old_values['filter_started'] == 'soon_started') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
-                                Скоро начнется
+                                Скоро стартует
                             </label>
                         </div>
                         <div class="flex items-center me-4">
@@ -153,13 +138,13 @@
                                    name="filter_started"
                                    type="radio"
                                    @click="resetFilters = true"
-                                   value="without_date"
+                                   value="application_acceptance"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == 'without_date') checked @endif
+                                       @if($old_values['filter_started'] == 'application_acceptance') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
-                                Нет даты начала
+                                Идет прием заявок
                             </label>
                         </div>
                     </div>
@@ -267,21 +252,6 @@
                     <h5 class="type_title text-[#24272B] text-[22px] font-[700] pb-5">Прием заявок</h5>
                     <div class="type__checkbox-party flex flex-col gap-3">
                         <div class="flex items-center me-4">
-                            <input id="upgoing-checkbox"
-                                   onchange="document.getElementById('upgoing-checkbox').value = this.value"
-                                   name="filter_started"
-                                   type="radio"
-                                   @click="resetFilters = true"
-                                   @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == 'started') checked @endif
-                                   @endisset
-                                   value="started"
-                                   class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
-                            <label for="upgoing-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
-                                Уже идет
-                            </label>
-                        </div>
-                        <div class="flex items-center me-4">
                             <input id="will-be-checkbox"
                                    onchange="document.getElementById('will-be-checkbox-modal').value = this.value"
                                    name="filter_started"
@@ -293,7 +263,7 @@
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
-                                Скоро начнется
+                                Скоро стартует
                             </label>
                         </div>
                         <div class="flex items-center me-4">
@@ -302,13 +272,13 @@
                                    name="filter_started"
                                    type="radio"
                                    @click="resetFilters = true"
-                                   value="without_date"
+                                   value="application_acceptance"
                                    @isset($old_values['filter_started'])
-                                       @if($old_values['filter_started'] == 'without_date') checked @endif
+                                       @if($old_values['filter_started'] == 'application_acceptance') checked @endif
                                    @endisset
                                    class="w-6 h-6 text-purple-600 bg-gray-100 border-[#24272B] border-solid border-[2px] rounded-[50%] focus:ring-purple-500  focus:ring-2 ">
                             <label for="will-be-checkbox" class="ms-3 text-[16px] font-[400] text-[#24272B]">
-                                Нет даты начала
+                                Идет прием заявок
                             </label>
                         </div>
                     </div>

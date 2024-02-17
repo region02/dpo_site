@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignUpFormRequest;
+use App\Mail\NotificationOfSignUp;
 use App\Models\Course;
 use App\Models\CourseType;
+use App\Models\UserCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class CourseController extends Controller
 {
@@ -38,11 +42,10 @@ class CourseController extends Controller
 
         if($request->get('filter_started')){
             match ($request->get('filter_started')){
-                'started' => $courses->where('start_at','<=', Carbon::now()),
 
                 'soon_started' => $courses->where('start_at','>', Carbon::now()),
 
-                'without_date' => $courses->whereNull('start_at'),
+                'application_acceptance' => $courses->whereNull('start_at'),
             };
         }
 
@@ -53,6 +56,20 @@ class CourseController extends Controller
     }
     public function show(Course $course)
     {
-        return view('main.course_page', compact('course'));
+        $types = CourseType::all();
+
+        return view('main.course_page', compact('course', 'types',));
+    }
+
+
+    public function userPut(Course $course, SignUpFormRequest $request)
+    {
+        $validated = $request->validated();
+
+        $userCourse = UserCourse::create(array_merge($validated,['course_id' => $course->id]));
+
+        Mail::send(new NotificationOfSignUp($userCourse));
+
+
     }
 }

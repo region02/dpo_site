@@ -9,3 +9,6 @@
 <div>
     Контактные данные: {{ $feedback->contact }}
 </div>
+<div>
+    Вопрос: {{ $feedback->question }}
+</div>
