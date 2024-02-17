@@ -15,7 +15,8 @@ Route::get('/course', [CourseController::class, 'index'])->name('course.all');
 
 
 Route::get('/course/{course:slug}', [CourseController::class, 'show'])->name('course.show');
-//Route::get('/course', [CourseController::class, 'show'])->name('course.show');
+
+Route::put('/course/{course:slug}', [CourseController::class, 'userPut'])->name('course.user.put');
 
 
 

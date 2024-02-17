@@ -24,6 +24,9 @@
                     имени Патриса Лумумбы
                     </h5>
             </div>
+            <h3 style="font-size: 12px; text-decoration: none; color: #d3d3d3;">This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </h3>
         </div>
     </div>
 </section>

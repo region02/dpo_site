@@ -107,10 +107,10 @@
                 <div class="feedback__call flex gap-5">
 
                     <h5 class=" text-[16px] xs:text-lg font-medium text-[#fff]">Мы в соц. сетях</h5>
-                    <a href="#" class="flex items-center">
+                    <a href="https://t.me/s/rudnffkiya" class="flex items-center">
                         <img src="{{url("img/icons/feedback__TG.svg")}}">
                     </a>
-                    <a href="#" class="flex items-center">
+                    <a href="https://vk.com/rudnffkiya?ysclid=lsott5imcy57472619" class="flex items-center">
                         <img src="{{url("img/icons/feedback__VK.svg")}}">
                     </a>
                 </div>

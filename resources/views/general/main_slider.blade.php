@@ -41,9 +41,12 @@
             @foreach($courses as $course)
                 <div class="swiper-slide swiper-slide_flex h-auto">
                     <a href="{{route('course.show',$course)}}" class="slide__card relative border-1 border-solid border-transparent
-                            max-w-[230px] h-[168px]
-                            min-[380px]:max-w-[300px] min-[380px]:h-[210px]
-                            min-[480px]:max-w-[400px] min-[480px]:h-[280px]  ">
+                                                                      max-w-[230px] h-[168px] after:transition after:duration-150 after:ease-out
+                                                                      after:content-[''] after:absolute after:bg-[#0000004d] after:w-[100%]
+                                                                      after:h-[inherit] after:top-0 after:rounded-[20px] hover:after:bg-[#00000000]
+                                                                      min-[380px]:max-w-[300px] min-[380px]:h-[210px]
+                                                                      min-[480px]:max-w-[400px] min-[480px]:h-[280px]
+                    ">
                         <img class="z-0 rounded-[20px]
                                     max-w-[230px] h-[168px]
                                     min-[380px]:max-w-[300px] min-[380px]:h-[210px]

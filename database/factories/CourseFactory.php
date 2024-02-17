@@ -34,7 +34,7 @@ class CourseFactory extends Factory
             'format' => fake()->sentence(2),
             'section_who' => function() {
                 $res = [];
-                for ($i=0;$i<4;$i++) {
+                for ($i=0;$i<rand(2,4);$i++) {
                     $res[] = [
                         'title' => fake()->sentence(5),
                         'subtitle' => fake()->paragraph(2),

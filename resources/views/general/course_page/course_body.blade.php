@@ -93,15 +93,13 @@
     </div>
     <section class="course-about mt-16">
         <h2 class="text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">для кого?</h2>
-        <div class="c-about-puzzle__container-disabled grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        @foreach($course->section_who as $item_who)
-
-            <div class="gradient-border c-about__item_2-disabled relative  px-[30px] py-[20px]
-                        h-auto backdrop-blur-[2px] bg-[#ffffff14] rounded-[15px] flex flex-col gap-2">
-                <h4 class="text-[#fff] text-[16px] sm:text-[25px] font-[700] leading-[1.4rem] sm:leading-[2rem]">{{$item_who['title']}}</h4>
-                <h5 class="text-[#fff] text-[14px] sm:text-[18px] font-[400] ">{{$item_who['subtitle']}}</h5>
-            </div>
+        <div class="c-about-puzzle__container ">
+            @foreach($course->section_who as $item_who)
+                <div class="gradient-border c-about__item_2-disabled relative  px-[30px] py-[20px]
+                            h-auto backdrop-blur-[2px] bg-[#ffffff14] rounded-[15px] flex flex-col gap-2">
+                    <h4 class="text-[#fff] text-[16px] sm:text-[25px] font-[700] leading-[1.4rem] sm:leading-[2rem]">{{$item_who['title']}}</h4>
+                    <h5 class="text-[#fff] text-[14px] sm:text-[18px] font-[400] ">{{$item_who['subtitle']}}</h5>
+                </div>
             @endforeach
 
 
@@ -153,7 +151,7 @@
             <h2 class="text-[40px] text-[#e5e5e5] font-[700] uppercase text-center ">
                 Как проходят занятия?
             </h2>
-            <div class="classes__body grid place-items-center grid-cols-1 md:grid-cols-3 px-0 sm:px-[25px] [&_strong]:font-[700]">
+            <div class="classes__body grid  grid-cols-1 md:grid-cols-3 px-0 sm:px-[25px] [&_strong]:font-[700]">
                 <div class="c-result__item flex flex-col gap-[10px]
                             px-0 sm:px-[25px] pb-[35px] pt-[20px]">
                     <div class="c-result__head flex gap-[10px] items-end ">

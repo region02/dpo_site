@@ -3,7 +3,7 @@
         <a href="https://rudn.ru/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ url('img/icons/logo_blue_rudn.svg') }}" class="h-11 block" alt="Логотип РУДН" />
         </a>
-        <a href="https://rudn.ru/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="https://phil.rudn.ru/o_kafedre_ija" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ url('img/icons/logo_blue_cafedra.svg') }}" class="h-11 block" alt="Логотип РУДН" />
         </a>
         <a href="https://rudn.ru/" class="uppercase font-sans text-[#0279C1] text-xl font-bold tracking-wider hidden md:flex">
