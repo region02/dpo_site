@@ -18,6 +18,8 @@ class CourseResource extends ModelResource
 
     protected string $title = 'Courses';
 
+    protected string $column = 'title';
+
     public function pages(): array
     {
         return [

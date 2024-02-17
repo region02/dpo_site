@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('feedback_type');
             $table->string('contact');
-            $table->string('question');
+            $table->text('question');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 };
