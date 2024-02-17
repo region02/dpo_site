@@ -10,6 +10,7 @@ use App\Models\UserCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class CourseController extends Controller
 {
@@ -70,6 +71,6 @@ class CourseController extends Controller
 
         Mail::send(new NotificationOfSignUp($userCourse));
 
-
+        return Redirect::back()->with('status','registered');
     }
 }

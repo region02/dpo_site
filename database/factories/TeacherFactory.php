@@ -27,7 +27,7 @@ class TeacherFactory extends Factory
                 return $res;
             },
             'avatar' => "teacher/avatar/" . fake()->image(
-                dir: storage_path('app/public/teacher/avatar'),
+                dir: storage_path('app'. DIRECTORY_SEPARATOR .'public'. DIRECTORY_SEPARATOR .'teacher'. DIRECTORY_SEPARATOR .'avatar'),
                 width: 129,
                 height: 129,
                 category: 'animals',

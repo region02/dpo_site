@@ -17,7 +17,7 @@ class NotificationOfSignUp extends Mailable
 
 
     public function __construct(
-        public UserCourse $userCourses,
+        public UserCourse $userCourse,
     )
     {
     }

@@ -6,29 +6,33 @@ namespace App\MoonShine\Resources;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Feedback;
+use App\Models\UserCourse;
 
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
 use MoonShine\ActionButtons\ActionButton;
-use MoonShine\Fields\Enum;
+use MoonShine\Fields\Email;
 use MoonShine\Fields\Field;
+use MoonShine\Fields\Phone;
 use MoonShine\Fields\Preview;
+use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Text;
-use MoonShine\MoonShineRequest;
 use MoonShine\MoonShineUI;
 use MoonShine\QueryTags\QueryTag;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
-use Symfony\Component\HttpFoundation\Response;
 
-class FeedbackResource extends ModelResource
+/**
+ * @extends ModelResource<UserCourse>
+ */
+class UserCourseResource extends ModelResource
 {
-    protected string $model = Feedback::class;
+    protected string $model = UserCourse::class;
 
-    protected string $title = 'Обратная связь';
+    protected string $title = 'UserCourses';
+
     protected bool $isAsync = true;
+
     public function getActiveActions(): array
     {
         if (request('query-tag') == 'arxiv') {
@@ -94,12 +98,12 @@ class FeedbackResource extends ModelResource
     {
         return [
             Block::make([
-                Preview::make('Завершено','deleted_at',fn($item) => $item->deleted_at??'Ожидает')
+                Preview::make('Обработано','deleted_at',fn($item) => $item->deleted_at??'Ожидает')
                     ->badge(fn($status,Field $field) => is_null($status)?'error': 'success'),
                 Text::make('ФИО','name')->sortable()->showOnExport(),
-                Text::make('Тип связи','feedback_type')->showOnExport()->sortable(),
-                Text::make('Контакт', 'contact')->showOnExport(),
-                Text::make('Текст Вопроса','question',formatted: fn($item) => Str::limit($item->question,15))->showOnExport(),
+                Email::make('Почта', 'email')->showOnExport(),
+                Phone::make('Номер телефона','phone')->showOnExport(),
+                BelongsTo::make('Курс','course',resource: new CourseResource(),formatted: fn($item)=>Str::limit($item->title,20))
 
             ]),
         ];

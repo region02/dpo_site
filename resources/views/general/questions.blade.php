@@ -88,7 +88,14 @@
 
                 <div class=" relative  ">
                     <label for="question" id="radio-link" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">вопрос</label>
-                    <textarea type="text" id="question" name="question" autocomplete="off" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] " placeholder="У меня возник вопрос по поводу..." required></textarea>
+                    <textarea x-data="{
+                                    resize () {
+                                        $el.style.height = '60px';
+                                        $el.style.height = $el.scrollHeight + 2 + 'px'
+                                    }
+                                }"
+                              x-init="resize()"
+                              @input="resize()" type="text" id="question" name="question" autocomplete="off" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] " placeholder="У меня возник вопрос по поводу..." required></textarea>
                 </div>
 
 
