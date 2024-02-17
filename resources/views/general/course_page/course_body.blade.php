@@ -1,4 +1,4 @@
-<main class="px-5 sm:px-8 xl:px-44 pt-5 [&_h2]:text-[22px] xs:[&_h2]:text-[30px] sm:[&_h2]:text-[40px]">
+<main @if(session('status') == 'registered') x-data="{ modalOpen: true }" @else x-data="{ modalOpen: false }" @endif class="px-5 sm:px-8 xl:px-44 pt-5 [&_h2]:text-[22px] xs:[&_h2]:text-[30px] sm:[&_h2]:text-[40px]">
     <a href="/" class="flex gap-[10px]">
         <img src="{{url('img/icons/return_arrow-white.svg')}}">
         <h5 class="text-[#E5E5E5] text-[16px] font-[400]">все курсы</h5>
@@ -7,15 +7,15 @@
         <div class="course__profile flex flex-col px-0 xl:px-10 gap-[30px]">
             <div class="profile__head flex flex-col gap-2 justify-between xl:flex-row">
                 <div class="profile__title flex flex-col gap-[24px] items-center xl:items-start max-w-full   xl:max-w-[calc(100%-305px)] " >
-                    <h5 class=" w-[fit-content] text-[#E5E5E5] text-[12px] sm:text-[18px]
+                    <a href="{{ route('course.all') }}?filter_type[]={{ $course->courseType->id }}" class=" w-[fit-content] text-[#E5E5E5] text-[12px] sm:text-[18px]
                                 font-[500] tracking-[.9px] rounded-[12px]
                                 bg-gradient-to-r from-[#FF512F] to-[#DD2476]
                                 px-[15px] py-[7px] sm:px-[20px] sm:py-[9px]
                                 flex items-center text-center xl:text-left
                                 "
-                        style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);">
+                       style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);">
                         {{$course->courseType->text}}
-                    </h5>
+                    </a>
                     <h2 class="uppercase text-[#fff] text-[20px] sm:text-[30px] text-center xl:text-left font-[600] ">
                         {{$course->title}}
                     </h2>
@@ -23,12 +23,12 @@
                         {{$course->subtitle}}
                     </h5>
                     <div class="course__reg w-full flex justify-center">
-                        <a href="#" class="reg__link px-[50px] py-[15px] rounded-[15px]
+                        <button @click="modalOpen=true"  class="reg__link px-[50px] py-[15px] rounded-[15px]
                                             border-solid border-[2px] border-[#e5e5e5] ">
                             <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">
                                 Записаться
                             </h4>
-                        </a>
+                        </button>
                     </div>
 
                 </div>
@@ -257,12 +257,107 @@
                     @endforeach
 
                 </ul>
-                <a href="#" class="reg__link w-[fit-content] px-[50px] py-[15px] rounded-[15px]
-                                            border-solid border-[2px] border-[#e5e5e5] my-6 ">
-                    <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">
-                        Записаться
-                    </h4>
-                </a>
+                <div
+                     @keydown.escape.window="modalOpen = false"
+                     :class="{ 'z-40': modalOpen }" class="relative w-auto h-auto">
+                    <button @click="modalOpen=true"  class="reg__link w-full sm:w-[fit-content] px-[50px] py-[15px] rounded-[15px]
+                                                border-solid border-[2px] border-[#e5e5e5] my-6 ">
+                        <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">
+                            Записаться
+                        </h4>
+                    </button>
+                    <template x-teleport="body">
+                        <div x-show="modalOpen" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen" x-cloak>
+                            <div x-show="modalOpen"
+                                 x-transition:enter="ease-out duration-300"
+                                 x-transition:enter-start="opacity-0"
+                                 x-transition:enter-end="opacity-100"
+                                 x-transition:leave="ease-in duration-300"
+                                 x-transition:leave-start="opacity-100"
+                                 x-transition:leave-end="opacity-0"
+                                 @click="modalOpen=false" class="absolute inset-0 w-full h-full  backdrop-blur-md bg-opacity-70"></div>
+                            @if(session('status') == 'registered')
+                                <div x-show="modalOpen"
+                                      x-trap.inert.noscroll="modalOpen"
+                                      x-transition:enter="ease-out duration-300"
+                                      x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95"
+                                      x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                      x-transition:leave="ease-in duration-200"
+                                      x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                                      x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
+                                      class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
+                                            sm:max-w-fit  flex flex-col gap-[40px]">
+                                    <div class="flex items-center justify-between gap-[30px] pb-3">
+
+                                        <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">Поздравляем!!! </h4>
+                                        <div class="relative w-12 h-12">
+                                            <button @click="modalOpen=false" class="absolute  flex items-center justify-center  text-[#E5E5E5] rounded-[15px] border-solid border-[#f5f5f5] border-[2px]   ">
+                                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <lord-icon
+                                            src="https://cdn.lordicon.com/xahuqqcs.json"
+                                            trigger="loop"
+                                            stroke="bold"
+                                            state="loop-rotate"
+                                            style="width:250px;height:250px">
+                                        </lord-icon>
+                                        <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400] ">Ваша заявка поступила к нам на обработку </h4>
+                                        <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400] ">Скоро мы с вами свяжемся </h4>
+                                    </div>
+                                </div>
+                            @else
+                                <form action="{{route('course.user.put',$course)}}" method="post" x-show="modalOpen"
+                                     x-trap.inert.noscroll="modalOpen"
+                                     x-transition:enter="ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95"
+                                     x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                     x-transition:leave="ease-in duration-200"
+                                     x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                                     x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
+                                     class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
+                                            sm:max-w-fit  flex flex-col gap-[40px]">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="flex items-center justify-between gap-[30px] pb-3">
+                                        <h2 class="uppercase font-sans text-[#E5E5E5]
+                                                   text-[1.5rem] font-[800] tracking-wider leading-[1.975rem] sm:leading-[1.975rem]
+                                                   max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider
+                                                   sm:text-[1.5rem] sm:font-[800] sm:tracking-wider
+                                                   md:text-[2.0rem] md:font-[800] md:tracking-wider
+                                                   lg:text-[2.3rem] lg:font-[800] lg:tracking-wider
+                                                   xl:text-[2.5rem] xl:font-[800] xl:tracking-wider ">Запись на курс</h2>
+                                        <div class="relative w-12 h-12">
+                                            <button @click="modalOpen=false" class="absolute  flex items-center justify-center  text-[#E5E5E5] rounded-[15px] border-solid border-[#f5f5f5] border-[2px] ">
+                                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-[30px]">
+
+                                        <div class=" relative ">
+                                            <label for="name" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
+                                            <input type="text" id="name" name="name" autocomplete="full-name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
+                                        </div>
+                                        <div class=" relative  ">
+                                            <label for="phone"  class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">телефон</label>
+                                            <input type="tel" maxlength=11  id="phone" name="phone" autocomplete="phone" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 " required>
+                                        </div>
+                                        <div class=" relative  ">
+                                            <label for="email"  class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">почта</label>
+                                            <input type="email" id="email"  name="email" autocomplete="email" class="bg-transparent border border-white text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-12 p-2.5" required>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col-reverse sm:flex-row relative h-[52px] ">
+                                        <button  type="submit" @if(session('status') == 'registered') @click="modalOpen=false" @endif class=" absolute text-white  w-full bg-gradient-to-r from-[#DA22FF] to-[#9733EE] px-5 py-3.5 text-center rounded-[20px] mx-auto lg:mx-0" >Отправить</button>
+                                    </div>
+                                </form>
+                            @endif
+                        </div>
+                    </template>
+                </div>
             </div>
         </div>
     </section>
