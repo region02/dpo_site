@@ -21,7 +21,7 @@ class CourseFactory extends Factory
             'subtitle' => fake()->sentence(),
             'cost' => fake()->randomNumber(5),
             'avatar' => "course/avatar/" . fake()->image(
-                dir: storage_path('app/public/course/avatar'),
+                dir: storage_path('app'. DIRECTORY_SEPARATOR  .'public'. DIRECTORY_SEPARATOR .'course'. DIRECTORY_SEPARATOR .'avatar' ),
                 width: 400,
                 height: 280,
                 category: 'animals',

@@ -19,7 +19,7 @@ class CourseTypeFactory extends Factory
             'color_from' => fake()->hexColor(),
             'color_to' => fake()->hexColor(),
             'avatar' => "course_type/avatar/" . fake()->image(
-                    dir: storage_path('app/public/course_type/avatar'),
+                    dir: storage_path('app'. DIRECTORY_SEPARATOR .'public'. DIRECTORY_SEPARATOR .'course_type'. DIRECTORY_SEPARATOR .'avatar'),
                     width: 165,
                     height: 165,
                     category: 'animals',
