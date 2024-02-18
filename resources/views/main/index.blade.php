@@ -27,17 +27,78 @@
             <div class="grid sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-2 min-h-[70dvh]">
                 <div class=" overflow-hidden flex flex-col items-center justify-center
                             border-[1px] border-[#ffffff] border-opacity-10
-                            pt-[6.5rem] pb-[6.5rem]  ">
-                    <div class="1-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                            pt-[6.5rem] pb-[6.5rem]  "
+                     x-data="{
+                                text1: '',
+                                text2: '',
+                                textArray1 : ['эффективное', 'актуальное', 'интересное', 'востребованное'],
+                                textArray2 : ['для вас', 'для партнеров', 'для бизнеса', 'для вузов'],
+                                textIndex: 0,
+                                charIndex1: 0,
+                                charIndex2: 0,
+                                typeSpeed: 95,
+                                pauseEnd: 2000,
+                                pauseStart: 20,
+                                direction: 'forward'
+                            }"
+                     x-init="$nextTick(() => {
+                                let typingInterval = setInterval(startTyping, $data.typeSpeed);
+
+                                function startTyping(){
+                                    let current1 = $data.textArray1[ $data.textIndex ];
+                                    let current2 = $data.textArray2[ $data.textIndex ];
+
+                                    // check to see if we hit the end of the string
+                                    if($data.charIndex1 > current1.length && $data.charIndex2 > current2.length){
+                                            $data.direction = 'backward';
+                                            clearInterval(typingInterval);
+
+                                            setTimeout(function(){
+                                                typingInterval = setInterval(startTyping, $data.typeSpeed);
+                                            }, $data.pauseEnd);
+                                    }
+
+                                    $data.text1 = current1.substring(0, $data.charIndex1);
+                                    $data.text2 = current2.substring(0, $data.charIndex2);
+
+                                    if($data.direction == 'forward')
+                                    {
+                                        $data.charIndex1 += 1;
+                                        $data.charIndex2 += 1;
+                                    }
+                                    else
+                                    {
+                                        if($data.charIndex1 == 0 && $data.charIndex2 == 0)
+                                        {
+                                            $data.direction = 'forward';
+                                            clearInterval(typingInterval);
+                                            setTimeout(function(){
+                                                $data.textIndex += 1;
+                                                if($data.textIndex >= $data.textArray1.length)
+                                                {
+                                                    $data.textIndex = 0;
+                                                }
+                                                typingInterval = setInterval(startTyping, $data.typeSpeed);
+                                            }, $data.pauseStart);
+                                        }
+                                        $data.charIndex1 -= 1;
+                                        $data.charIndex2 -= 1;
+                                    }
+                                }
+
+                        })">
+                    <div
+                        class="relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="first-lane uppercase font-sans text-[#E5E5E5]
                                    text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                                    max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
                                    sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
                                    md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                    lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                   xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]">
-                            эффективное
+                                   xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]"
+                            x-text="text1">
                         </h3>
+
                     </div>
                     <div class="w-fit m-1 p-5 md:m-2 md:p-5">
                         <h3 class="uppercase font-sans text-[#E5E5E5]
@@ -50,16 +111,18 @@
                             обучение
                         </h3>
                     </div>
-                    <div class="3-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                    <div
+                        class="relative flex items-center justify-center h-auto 3-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="last-lane uppercase font-sans text-[#E5E5E5]
                                     text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                                     max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
                                     sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
                                     md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                     lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]">
-                            для вас
+                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]"
+                            x-text="text2">
                         </h3>
+
                     </div>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2

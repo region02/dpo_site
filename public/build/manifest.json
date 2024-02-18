@@ -1,14 +1,23 @@
 {
+  "_grid-!~{006}~.js": {
+    "file": "assets/grid-pjvkTkke.css",
+    "src": "_grid-!~{006}~.js"
+  },
+  "_grid-wkc_4DCz.js": {
+    "css": [
+      "assets/grid-pjvkTkke.css"
+    ],
+    "file": "assets/grid-wkc_4DCz.js"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-2pJWIdho.css",
+    "file": "assets/app-7BgaR0BH.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-kiVgsr7I.js",
+    "file": "assets/app-O_yCter7.js",
     "imports": [
-      "resources/js/main_slider.js",
-      "resources/js/feedback.js"
+      "_grid-wkc_4DCz.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
@@ -24,10 +33,10 @@
     "src": "resources/js/feedback.js"
   },
   "resources/js/main_slider.js": {
-    "css": [
-      "assets/main_slider-pjvkTkke.css"
+    "file": "assets/main_slider-Segbixi6.js",
+    "imports": [
+      "_grid-wkc_4DCz.js"
     ],
-    "file": "assets/main_slider-8IayCWk6.js",
     "isEntry": true,
     "src": "resources/js/main_slider.js"
   }
