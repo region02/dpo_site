@@ -9,6 +9,7 @@ use App\Models\CourseType;
 
 use MoonShine\Components\Boolean;
 use MoonShine\Fields\Color;
+use MoonShine\Fields\Image;
 use MoonShine\Fields\Text;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
@@ -35,6 +36,9 @@ class CourseTypeResource extends ModelResource
                     ->default('#FF512F'),
                 Color::make('Конечный цвет градиента', 'color_to')
                     ->default('#DD2476'),
+                Image::make('Аватар', 'avatar')
+                    ->disk('public')
+                    ->dir('teacher/avatar'),
             ]),
         ];
     }

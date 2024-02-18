@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('avatar');
-            $table->foreignId('course_type_id')->constrained('course_types')->cascadeOnDelete();
+            $table->foreignId('course_type_id')->constrained('course_types');
 
             $table->string('slug');
 

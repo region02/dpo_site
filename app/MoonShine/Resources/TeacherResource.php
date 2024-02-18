@@ -40,9 +40,10 @@ class TeacherResource extends ModelResource
                         TinyMce::make('Пункт','content'),
                     ])
                     ->creatable()
-                    ->removable(),
+                    ->removable()
+                    ->hideOnIndex(),
                 BelongsToMany::make('Курсы','courses', resource:  new CourseResource())
-                    ->asyncSearch()
+                    ->badge()
                     ->withImage('avatar', 'public', 'course/avatar')
 
             ]),

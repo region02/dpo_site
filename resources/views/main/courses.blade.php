@@ -173,7 +173,7 @@
                             gap-x-0 sm:gap-x-[20px] gap-y-[30px] sm:gap-y-[50px]">
                     @foreach($courses as $course)
                         <a href="{{route('course.show',$course)}}" x-intersect.threshold.50="$refs.course_img_{{$course->id}}.src = $refs.course_img_{{$course->id}}.dataset.img" class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
-                            <div class="card__body relative">
+                            <div class="card__body relative w-full max-w-[430px] max-h-[280px] h-[280px]">
                                 <div class="card__type">
                                     <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
                                            font-[500] tracking-[.9px] rounded-[12px]
@@ -184,8 +184,9 @@
                                 </div>
                                 <img
                                     x-ref="course_img_{{$course->id}}"
-                                    class="opacity-0 rounded-[18px] w-full"
+                                    class="opacity-0 rounded-[18px] object-cover h-full "
                                     src="{{url('img/icons/preloader.svg')}}"
+                                    width="100%"
                                     alt="Картинка курса предмета <<{){$course->title}}>>"
                                     data-img="/storage/{{$course->avatar}}"
                                     onload="this.classList.add('opacity-100')">

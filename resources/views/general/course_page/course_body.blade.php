@@ -33,7 +33,7 @@
 
                 </div>
                 <div class="course__photo w-[305px] h-[305px] hidden xl:flex   ">
-                    <img class="h-[100%] max-w-[100%] rounded-[20px]" src="/storage/{{$course->avatar}}" alt="">
+                    <img class="h-[100%] max-w-[100%] rounded-[20px] object-cover" src="/storage/{{$course->avatar}}" alt="">
                 </div>
             </div>
 
@@ -47,7 +47,11 @@
                             Старт
                         </h5>
                         <h5 class="card__subtitle text-[#fff] text-[16px] font-[200] text-center sm:text-start">
-                            {{$course->start_at->translatedFormat('j F ')}}
+                            @if(!is_null($course->start_at))
+                                {{$course->start_at->translatedFormat('j F ')}}
+                            @else
+                                Идет прием заявок
+                            @endif
                         </h5>
                     </div>
                 </div>
