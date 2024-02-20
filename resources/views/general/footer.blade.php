@@ -3,7 +3,12 @@
         <div class="footer__container flex flex-col max-w-[100%]  border-t-[2px] border-t-[#fff] border-solid gap-[30px] mt-28 pb-32">
             <ul class="nav-list flex flex-wrap gap-[20px] max-w-[100%] sm:max-w-[70%] pt-8">
                 @foreach($types as $type)
-                    <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">{{$type->text}}</li>
+
+                    <li class=" text-[16px] xs:text-xl font-medium text-[#fff] pr-14">
+                        <a href="{{ route('course.all') }}?filter_type[]={{ $type->id }}">
+                            {{$type->text}}
+                        </a>
+                    </li>
                 @endforeach
 
 

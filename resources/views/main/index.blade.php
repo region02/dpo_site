@@ -266,6 +266,9 @@
                             .gradient-change-circle-{{ $loop->index }}{
                                 transform: scale(0%) !important;
                             }
+                            .gradient-change-{{ $loop->index }}{
+                                transform: scale(100%);
+                            }
                         }
                         .type__avatar:hover img{
 
@@ -282,7 +285,8 @@
                     <li class="border-b-[1px] border-[#ffffff] border-opacity-10">
                         <a href="{{ route('course.all') }}?filter_type[]={{ $type->id }}" class="flex flex-row content-center justify-between items-center font-semibold p-5 gap-[10px] cursor-pointer type__link">
                             <div class=" w-[80%] flex items-center gap-[20px]">
-                                <span class="font-sans text-white text-lg sm:text-xl font-bold tracking-wider">
+                                <span class="font-sans text-white text-lg sm:text-xl  font-bold tracking-wider
+                                             transition-all  active:text-purple-700 sm:active:text-white">
                                     {{ $type->text }}
                                 </span>
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="gradient-change-circle-{{ $loop->index }} ">
