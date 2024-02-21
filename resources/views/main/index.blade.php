@@ -36,8 +36,8 @@
                                 textIndex: 0,
                                 charIndex1: 0,
                                 charIndex2: 0,
-                                typeSpeed: 50,
-                                pauseEnd: 2500,
+                                typeSpeed: 40,
+                                pauseEnd: 3000,
                                 pauseStart: 0,
                                 direction: 'forward'
                             }"
