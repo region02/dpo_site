@@ -7,7 +7,9 @@ export default {
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
     screens: {
           'xs': '360px',
 
@@ -25,6 +27,9 @@ export default {
 
           '2xl': '1536px',
           // => @media (min-width: 1536px) { ... }
+
+
+           // => @media (min-height: 700px) { ... }
       }
   },
   plugins: [

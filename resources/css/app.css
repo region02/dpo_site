@@ -206,7 +206,14 @@
 
 
     }
-
+    .filter-modal__window{
+        height: 96dvh;
+    }
+    @media screen and (min-height: 700px) {
+        .filter-modal__window{
+            height: auto;
+        }
+    }
 
 
 

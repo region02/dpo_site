@@ -36,9 +36,9 @@
                                 textIndex: 0,
                                 charIndex1: 0,
                                 charIndex2: 0,
-                                typeSpeed: 95,
-                                pauseEnd: 2000,
-                                pauseStart: 20,
+                                typeSpeed: 50,
+                                pauseEnd: 2500,
+                                pauseStart: 0,
                                 direction: 'forward'
                             }"
                      x-init="$nextTick(() => {

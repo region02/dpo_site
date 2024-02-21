@@ -25,7 +25,7 @@
       @else true
       @endif }">
     @include('general/header_white ')
-    <main class="w-full  mt-10 px-3 lg:px-20">
+    <main class="w-full mt-3 sm:mt-10 px-3 lg:px-20">
         <a href="{{route('index.show')}}" class="flex gap-[10px]">
             <img src="{{url('img/icons/return_arrow.svg')}}">
             <h5 class="text-[#0279C1] text-[16px] font-[400]">вернуться назад</h5>
@@ -172,14 +172,26 @@
                 <div x-data class="courses-list grid grid-cols-1 md:grid-cols-2 min-[1700px]:grid-cols-3
                             gap-x-0 sm:gap-x-[20px] gap-y-[30px] sm:gap-y-[50px]">
                     @foreach($courses as $course)
-                        <a href="{{route('course.show',$course)}}" x-intersect.threshold.50="$refs.course_img_{{$course->id}}.src = $refs.course_img_{{$course->id}}.dataset.img" class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
+                        <a href="{{route('course.show',$course)}}" x-intersect.threshold.15="$refs.course_img_{{$course->id}}.src = $refs.course_img_{{$course->id}}.dataset.img" class="course-card flex flex-col gap-4 max-w-[430px] mx-auto">
                             <div class="card__body relative w-full max-w-[430px] max-h-[280px] h-[280px]">
                                 <div class="card__type">
-                                    <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute text-[#E5E5E5] text-[12px] sm:text-[18px]
+                                    <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute text-[#E5E5E5] text-[18px]
                                            font-[500] tracking-[.9px] rounded-[12px]
 {{--                                           bg-gradient-to-r from-[{{$course->courseType->color_from}}] to-[{{$course->courseType->color_to}}]--}}
                                            m-[10px] sm:m-[20px] px-[15px] py-[7px] sm:px-[20px] sm:py-[9px] ">
                                         {{$course->courseType->text}}
+                                    </h5>
+                                </div>
+                                <div class="card__date">
+                                    <h5 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);" class="absolute right-0 bottom-0 text-[#E5E5E5] text-[12px] sm:text-[18px]
+                                           font-[500] tracking-[.9px] rounded-[12px]
+{{--                                           bg-gradient-to-r from-[{{$course->courseType->color_from}}] to-[{{$course->courseType->color_to}}]--}}
+                                           m-[10px] sm:m-[20px] px-[15px] py-[7px] sm:px-[20px] sm:py-[9px] ">
+                                        @if(!is_null($course->start_at))
+                                            {{$course->start_at->translatedFormat('j F ')}}
+                                        @else
+                                            Идет прием  заявок
+                                        @endif
                                     </h5>
                                 </div>
                                 <img
@@ -190,6 +202,36 @@
                                     alt="Картинка курса предмета <<{){$course->title}}>>"
                                     data-img="/storage/{{$course->avatar}}"
                                     onload="this.classList.add('opacity-100')">
+                                <div class="absolute flex sm:hidden flex-row px-[9px] py-[10px] bg-[#F4F4F4] rounded-t-[13px] translate-y-[-100%] w-full ">
+                                    <div class="flex flex-col gap-[3px] pr-[3%] border-solid border-r-[1px] border-[#24272b4d]  ">
+                                        <h5 class="card__subtitle text-[#24272B] text-[13px] font-[700] w-fit">
+                                            Начало:
+                                        </h5>
+                                        <h5 class="card__subtitle text-[#24272B] text-[12px] font-[400] w-max">
+                                            @if(!is_null($course->start_at))
+                                                {{$course->start_at->translatedFormat('j F ')}}
+                                            @else
+                                                Идет прием <br> заявок
+                                            @endif
+                                        </h5>
+                                    </div>
+                                    <div class="flex flex-col gap-[3px] pl-[3%] pr-[3%] border-solid border-r-[1px] border-[#24272b4d]">
+                                        <h5 class="card__subtitle text-[#24272B] text-[13px] font-[700] ">
+                                            Длительность:
+                                        </h5>
+                                        <h5 class="card__subtitle text-[#24272B] text-[12px] font-[400]">
+                                            {{$course->duration}}
+                                        </h5>
+                                    </div>
+                                    <div class="flex flex-col gap-[3px] pl-[3%] ">
+                                        <h5 class="card__subtitle text-[#24272B] text-[13px] font-[700]">
+                                            Формат:
+                                        </h5>
+                                        <h5 class="card__subtitle text-[#24272B] text-[12px] font-[400]">
+                                            {{$course->format}}
+                                        </h5>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card__info flex flex-col gap-1 sm:gap-3">
                                 <h4 class="card__title text-[#24272B] text-[25px] font-[700] leading-7 sm:leading-[2.25rem]">
@@ -215,7 +257,7 @@
 
 
     <div id="modal" class="filter-modal z-30 fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center p-4 hidden">
-        <div class="filter-modal__window flex flex-col gap-[30px] rounded-[20px]
+        <div class="filter-modal__window flex flex-col gap-[20px] rounded-[20px]
                                          bg-[#fff] px-[25px] py-[40px]
                                         ">
             <div class="filter-modal__head flex justify-between items-center ">
@@ -225,7 +267,7 @@
                     <img src="{{url('img/icons/close-modal.svg')}}">
                 </button>
             </div>
-            <div class="filter-modal__body flex flex-col gap-[30px]">
+            <div class="filter-modal__body flex flex-col gap-[20px]">
                 <div class="sidebar__type">
                     <h5 class="type_title text-[#24272B] text-[22px] font-[700] pb-5">Тип</h5>
                     <div class="type__checkbox-party flex flex-col gap-3">

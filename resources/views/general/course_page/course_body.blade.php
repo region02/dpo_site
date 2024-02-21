@@ -3,7 +3,7 @@
         <img src="{{url('img/icons/return_arrow-white.svg')}}">
         <h5 class="text-[#E5E5E5] text-[16px] font-[400]">все курсы</h5>
     </a>
-    <div class="course-container pt-20">
+    <div class="course-container pt-5 sm:pt-20">
         <div class="course__profile flex flex-col px-0 xl:px-10 gap-[30px]">
             <div class="profile__head flex flex-col gap-2 justify-between xl:flex-row">
                 <div class="profile__title flex flex-col gap-[24px] items-center xl:items-start max-w-full   xl:max-w-[calc(100%-305px)] " >
@@ -16,7 +16,7 @@
                        style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);">
                         {{$course->courseType->text}}
                     </a>
-                    <h2 class="uppercase text-[#fff] text-[20px] sm:text-[30px] text-center xl:text-left font-[600] ">
+                    <h2 class="uppercase text-[#fff] text-[17px] sm:text-[30px] text-center xl:text-left font-[600] ">
                         {{$course->title}}
                     </h2>
                     <h5 class="card__subtitle text-[#fff] text-[20px] text-center xl:text-left font-[400]">
@@ -95,8 +95,8 @@
             </div>
         </div>
     </div>
-    <section class="course-about mt-16">
-        <h2 class="text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">для кого?</h2>
+    <section class="course-about mt-12">
+        <h2 class="!text-[30px] sm:text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">для кого?</h2>
         <div class="c-about-puzzle__container ">
             @foreach($course->section_who as $item_who)
                 <div class="gradient-border c-about__item_2-disabled relative  px-[30px] py-[20px]
@@ -109,8 +109,8 @@
 
         </div>
     </section>
-    <section class="course-about mt-16">
-        <h2 class="text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">О чем курс?</h2>
+    <section class="course-about mt-12">
+        <h2 class="!text-[30px] sm:text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">О чем курс?</h2>
         <div class="c-about__container max-w-[100%]">
             <ul class="timetable__list  leading-[170%] text-[#fff] text-[16px] font-[200]  flex flex-col gap-[12px]">
 
@@ -126,8 +126,8 @@
         </div>
     </section>
 
-    <section class="course__result mt-16">
-        <h2 class="text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">Результат</h2>
+    <section class="course__result mt-12">
+        <h2 class="!text-[30px] sm:text-[40px] text-[#e5e5e5] font-[700] uppercase mb-6">Результат</h2>
         <div class="c-result__container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[20px] gap-y-[40px]">
 
 
@@ -196,8 +196,8 @@
         </div>
     </section>
 
-    <section class="timetable mt-28">
-        <h2 class="text-[40px] text-[#e5e5e5] font-[700] uppercase  ">
+    <section class="timetable mt-12 sm:mt-28">
+        <h2 class="!text-[30px] sm:text-[40px] text-[#e5e5e5] font-[700] uppercase  ">
             Расписание
         </h2>
         <ul class="timetable__container mt-8">
@@ -239,7 +239,7 @@
     @endforeach
 
 
-    <section class="cost mt-28">
+    <section class="cost mt-12 sm:mt-28">
         <div class="gradient-border px-[25px] py-[20px] relative
                     rounded-[15px] backdrop-blur-[2px] bg-[#ffffff14]
                      flex flex-col gap-[35px]">
