@@ -15,6 +15,7 @@ use MoonShine\Fields\Enum;
 use MoonShine\Fields\Field;
 use MoonShine\Fields\Preview;
 use MoonShine\Fields\Text;
+use MoonShine\Fields\Textarea;
 use MoonShine\MoonShineRequest;
 use MoonShine\MoonShineUI;
 use MoonShine\QueryTags\QueryTag;
@@ -99,8 +100,8 @@ class FeedbackResource extends ModelResource
                 Text::make('ФИО','name')->sortable()->showOnExport(),
                 Text::make('Тип связи','feedback_type')->showOnExport()->sortable(),
                 Text::make('Контакт', 'contact')->showOnExport(),
-                Text::make('Текст Вопроса','question',formatted: fn($item) => Str::limit($item->question,15))->showOnExport(),
-
+                Text::make('Текст Вопроса','question',formatted: fn($item) => Str::limit($item->question,15))->hideOnDetail(),
+                Textarea::make('Текст Вопроса','question')->showOnExport()->hideOnIndex(),
             ]),
         ];
     }
