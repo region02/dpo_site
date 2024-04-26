@@ -22,7 +22,7 @@
                     <h5 class="card__subtitle text-[#fff] text-[20px] text-center xl:text-left font-[400]">
                         {{$course->subtitle}}
                     </h5>
-                    <div class="course__reg w-full flex justify-center">
+                    <div class="course__reg w-full flex justify-start">
                         <button @click="modalOpen=true"  class="reg__link px-[50px] py-[15px] rounded-[15px]
                                             border-solid border-[2px] border-[#e5e5e5]"
                                 style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);">
@@ -266,7 +266,8 @@
                      @keydown.escape.window="modalOpen = false"
                      :class="{ 'z-40': modalOpen }" class="relative w-auto h-auto">
                     <button @click="modalOpen=true"  class="reg__link w-full sm:w-[fit-content] px-[50px] py-[15px] rounded-[15px]
-                                                border-solid border-[2px] border-[#e5e5e5] my-6 ">
+                                                border-solid border-[2px] border-[#e5e5e5] my-6 "
+                            style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);">
                         <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">
                             Записаться
                         </h4>
