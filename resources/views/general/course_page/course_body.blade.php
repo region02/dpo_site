@@ -24,7 +24,8 @@
                     </h5>
                     <div class="course__reg w-full flex justify-center">
                         <button @click="modalOpen=true"  class="reg__link px-[50px] py-[15px] rounded-[15px]
-                                            border-solid border-[2px] border-[#e5e5e5] ">
+                                            border-solid border-[2px] border-[#e5e5e5]"
+                                style="background: linear-gradient(90deg, {{$course->courseType->color_from}} 0%, {{$course->courseType->color_to}} 100%);">
                             <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">
                                 Записаться
                             </h4>

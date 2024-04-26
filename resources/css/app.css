@@ -216,5 +216,23 @@
     }
 
 
+    @media screen and (min-width: 1500px){
+        .hero-content{
+
+            grid-template-columns: 5fr 6fr;
+        }
+    }
+    @media screen and (min-width: 1700px){
+        .hero__info-dots{
+            gap: 20px !important;
+        }
+
+        .info-dots{
+            width: 25px;
+        }
+    }
+
+
+
 
 }

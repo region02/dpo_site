@@ -24,10 +24,10 @@
 
     <main class=" w-full mx-auto ">
         <section class="hero" id="hero">
-            <div class="grid sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-2 min-h-[70dvh]">
+            <div class="hero-content grid sm:grid-flow-col sm:grid-rows-1  min-h-[70dvh]">
                 <div class=" overflow-hidden flex flex-col items-center justify-center
                             border-[1px] border-[#ffffff] border-opacity-10
-                            pt-[6.5rem] pb-[6.5rem]  "
+                            pt-[6.5rem] pb-[6.5rem] 2xl:gap-4  "
                      x-data="{
                                 text1: '',
                                 text2: '',
@@ -88,14 +88,15 @@
 
                         })">
                     <div
-                        class="relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                        class="relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2  2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="first-lane uppercase font-sans text-[#E5E5E5]
                                    text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                                    max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
                                    sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
                                    md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                    lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                   xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]"
+                                   xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
+                                   2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
                             x-text="text1">
                         </h3>
 
@@ -107,19 +108,21 @@
                                     sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
                                     md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                     lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]">
+                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
+                                    2xl:text-[3.2rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]">
                             обучение
                         </h3>
                     </div>
                     <div
-                        class="relative flex items-center justify-center h-auto 3-1-lane m-0 p-5 md:m-2 md:p-5 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                        class="relative flex items-center justify-center h-auto 3-1-lane m-0 p-5 md:m-2  2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="last-lane uppercase font-sans text-[#E5E5E5]
                                     text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                                     max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
                                     sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
                                     md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                                     lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]"
+                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
+                                    2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
                             x-text="text2">
                         </h3>
 
@@ -138,6 +141,7 @@
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
                                     xl:text-2xl xl:leading-[1.675rem]
+                                    2xl:text-[30px] 2xl:leading-normal
                                     tracking-wider hyphens-auto
                                     pt-[25px] px-[25px] sm:pt-[50px]
                                     pb-[65px] sm:pb-[90px]">
@@ -145,7 +149,7 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px] ">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                     <div class="border-[2px] border-[#ffffff] border-opacity-15
@@ -157,6 +161,7 @@
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
                                     xl:text-2xl xl:leading-[1.675rem]
+                                    2xl:text-[30px] 2xl:leading-normal
                                     tracking-wider hyphens-auto
                                     pt-[25px] px-[25px] sm:pt-[50px]
                                     pb-[65px] sm:pb-[90px]">
@@ -164,8 +169,8 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px] lg:pr-[70px] ">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                     <div class="border-[2px] border-[#ffffff] border-opacity-15
@@ -177,6 +182,7 @@
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
                                     xl:text-2xl xl:leading-[1.675rem]
+                                    2xl:text-[30px] 2xl:leading-normal
                                     tracking-wider hyphens-auto
                                     pt-[25px] px-[25px] sm:pt-[50px]
                                     pb-[65px] sm:pb-[90px]">
@@ -184,9 +190,9 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px]">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                     <div class="border-r-[2px] border-t-2 border-b-[1px]
@@ -199,6 +205,7 @@
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
                                     xl:text-2xl xl:leading-[1.675rem]
+                                    2xl:text-[30px] 2xl:leading-normal
                                     tracking-wider hyphens-auto
                                     pt-[25px] px-[25px] sm:pt-[50px]
                                     pb-[65px] sm:pb-[90px]">
@@ -206,10 +213,10 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px] lg:pr-[70px]">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
-                            <img src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                 </div>
