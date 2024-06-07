@@ -8,7 +8,7 @@
         <div class="teacher__profile flex flex-col px-4 sm:px-[25px]">
             <div class="teacher__title flex flex-row gap-[20px] items-center ">
                 <div class="teacher__avatar w-[129px] h-[129px]">
-                    <img class="max-w-full h-full rounded-[20px]" src="{{url("storage/$teacher->avatar")}}" alt="">
+                    <img class="w-full object-cover h-full rounded-[20px]" src="{{url("storage/$teacher->avatar")}}" alt="">
                 </div>
                 <h4 class="text-[#fff] text-[20px] sm:text-[25px] font-[700] ">
                     {{explode(" ",$teacher->name)[0]}} <br>
