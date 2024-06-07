@@ -41,7 +41,7 @@ class CourseFormPage extends FormPage
                         Number::make('Стоимость', 'cost')
                             ->default(60000),
                         Image::make('Изображение', 'avatar')
-                            ->when(fn() => is_null($this->getItem()?->avatar), fn(Image $field) => $field->required())
+                            ->when(fn(Image $field) => is_null($field->getData()), fn(Image $field) => $field->required())
                             ->disk('public')
                             ->dir('course/avatar'),
                     ])
