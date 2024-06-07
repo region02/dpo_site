@@ -94,7 +94,8 @@ class UserCourseResource extends ModelResource
         }
     }
 
-    public function fields(): array
+
+    public function indexFields(): array
     {
         return [
             Block::make([
@@ -103,12 +104,47 @@ class UserCourseResource extends ModelResource
                 Text::make('ФИО','name')->sortable()->showOnExport(),
                 Email::make('Почта', 'email')->showOnExport(),
                 Phone::make('Номер телефона','phone')->showOnExport(),
-                BelongsTo::make('Курс','course',resource: new CourseResource(),formatted: fn($item)=>Str::limit($item->title,20))
+                BelongsTo::make('Курс','course',resource: new CourseResource(),
+                    formatted: fn($item)=>Str::limit($item->title,20)
+                )
 
             ]),
         ];
     }
 
+    public function detailFields(): array
+    {
+        return [
+            Block::make([
+                Preview::make('Обработано','deleted_at',fn($item) => $item->deleted_at??'Ожидает')
+                    ->badge(fn($status,Field $field) => is_null($status)?'error': 'success'),
+                Text::make('ФИО','name')->sortable()->showOnExport(),
+                Email::make('Почта', 'email')->showOnExport(),
+                Phone::make('Номер телефона','phone')->showOnExport(),
+                BelongsTo::make('Курс','course',resource: new CourseResource(),
+//                    formatted: fn($item)=>$item->title
+                )
+
+            ]),
+        ];
+    }
+
+    public function formFields(): array
+    {
+        return [
+            Block::make([
+                Preview::make('Обработано','deleted_at',fn($item) => $item->deleted_at??'Ожидает')
+                    ->badge(fn($status,Field $field) => is_null($status)?'error': 'success'),
+                Text::make('ФИО','name')->sortable()->showOnExport(),
+                Email::make('Почта', 'email')->showOnExport(),
+                Phone::make('Номер телефона','phone')->showOnExport(),
+                BelongsTo::make('Курс','course',resource: new CourseResource(),
+                    formatted: fn($item)=>$item->title,
+                )->readonly(),
+
+            ]),
+        ];
+    }
     public function rules(Model $item): array
     {
         return [];
