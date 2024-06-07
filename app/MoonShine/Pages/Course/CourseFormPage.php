@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Pages\Course;
 
+use App\Models\Course;
 use App\MoonShine\Resources\CourseTypeResource;
 use App\MoonShine\Resources\TeacherResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
 use MoonShine\Fields\Date;
+use MoonShine\Fields\Field;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Number;
@@ -39,7 +41,7 @@ class CourseFormPage extends FormPage
                         Number::make('Стоимость', 'cost')
                             ->default(60000),
                         Image::make('Изображение', 'avatar')
-                            ->required()
+                            ->when(fn(Course $data) => is_null($data->avatar), fn(Field $field) => $field->required())
                             ->disk('public')
                             ->dir('course/avatar'),
                     ])
