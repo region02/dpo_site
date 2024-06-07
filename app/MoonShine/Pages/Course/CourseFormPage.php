@@ -32,7 +32,7 @@ class CourseFormPage extends FormPage
             Grid::make([
                 Column::make([
                     Block::make([
-                        Text::make('Название','title')
+                        Text::make('Название', 'title')
                             ->customAttributes(['maxlength' => '255'])
                             ->default('Название'),
                         Text::make('Подзаголовок', 'subtitle')
@@ -41,7 +41,7 @@ class CourseFormPage extends FormPage
                         Number::make('Стоимость', 'cost')
                             ->default(60000),
                         Image::make('Изображение', 'avatar')
-                            ->when(fn(Image $field) => is_null($field->getData()), fn(Image $field) => $field->required())
+                            ->when(fn() => is_null($this->getResource()->getItem()?->avatar), fn(Image $field) => $field->required())
                             ->disk('public')
                             ->dir('course/avatar'),
                     ])
@@ -49,9 +49,9 @@ class CourseFormPage extends FormPage
                 Column::make([
                     Block::make([
                         BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource())
-                            ->withImage('avatar', 'public','course_type/avatar'),
-                        Slug::make('Slug','slug')->from('title')->unique()->hint('поддерживает авто-генерацию(можно оставить пустым)'),
-                        Date::make('Дата начала','start_at')->nullable(),
+                            ->withImage('avatar', 'public', 'course_type/avatar'),
+                        Slug::make('Slug', 'slug')->from('title')->unique()->hint('поддерживает авто-генерацию(можно оставить пустым)'),
+                        Date::make('Дата начала', 'start_at')->nullable(),
                         BelongsToMany::make('Преподаватель', 'teachers', resource: new TeacherResource())
                             ->selectMode()
                             ->withImage('avatar', 'public', 'teacher/avatar'),
@@ -65,7 +65,7 @@ class CourseFormPage extends FormPage
                             ->default('72 ак.ч.  в том числе 44 аудит. ч.'),
                         Text::make('Формат', 'format')
                             ->default('очный / онлайн+возможность присутствовать на кампусе'),
-                        Json::make('Для кого','section_who')
+                        Json::make('Для кого', 'section_who')
                             ->fields([
                                 Textarea::make('Заголовок', 'title')
                                     ->default('Для лиц, желающих научиться переводить по-переводчески')
@@ -128,7 +128,7 @@ class CourseFormPage extends FormPage
                             ->fields([
                                 Textarea::make('Заголовок', 'title'),
                                 Json::make('Подзаголовки', 'content')
-                                    ->fields([Textarea::make('Пункт','li')])
+                                    ->fields([Textarea::make('Пункт', 'li')])
                                     ->removable(),
                             ])
                             ->creatable()
