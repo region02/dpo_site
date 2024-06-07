@@ -49,7 +49,7 @@ class CourseFormPage extends FormPage
                 Column::make([
                     Block::make([
                         BelongsTo::make('Тип', 'courseType', resource: new CourseTypeResource())
-                            ->withImage('avatar', 'public', 'course_type/avatar'),
+                            ->withImage('avatar', 'public', ''),
                         Slug::make('Slug', 'slug')->from('title')->unique()->hint('поддерживает авто-генерацию(можно оставить пустым)'),
                         Date::make('Дата начала', 'start_at')->nullable(),
                         BelongsToMany::make('Преподаватель', 'teachers', resource: new TeacherResource())
