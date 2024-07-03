@@ -284,34 +284,38 @@
                                  @click="modalOpen=false" class="absolute inset-0 w-full h-full  backdrop-blur-md bg-opacity-70"></div>
                             @if(session('status') == 'registered')
                                 <div x-show="modalOpen"
-                                      x-trap.inert.noscroll="modalOpen"
-                                      x-transition:enter="ease-out duration-300"
-                                      x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95"
-                                      x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                                      x-transition:leave="ease-in duration-200"
-                                      x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                                      x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
-                                      class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
-                                            sm:max-w-fit  flex flex-col gap-[40px]">
+                                     x-trap.inert.noscroll="modalOpen"
+                                     x-transition:enter="ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95"
+                                     x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                     x-transition:leave="ease-in duration-200"
+                                     x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                                     x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
+                                     class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
+                                        sm:max-w-fit flex flex-col gap-[40px]">
                                     <div class="flex items-center justify-between gap-[30px] pb-3">
-
-                                        <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">Поздравляем!!! </h4>
-                                        <div class="relative w-12 h-12">
-                                            <button @click="modalOpen=false" class="absolute  flex items-center justify-center  text-[#E5E5E5] rounded-[15px] border-solid border-[#f5f5f5] border-[2px]   ">
-                                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                                        <h4 class="card__subtitle text-[#fff] text-[20px] font-[700] ">Отправлено</h4>
+                                        <div class="gradient-border before:p-[5px] relative w-12 h-12">
+                                            <button @click="modalOpen=false"
+                                                    class="border-none absolute flex items-center justify-center text-[#E5E5E5] rounded-[15px]  border-[#f5f5f5] border-[2px] focus-visible:ring-0 focus-visible:outline-0">
+                                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                     viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                                                </svg>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-center">
                                         <lord-icon
-                                            src="https://cdn.lordicon.com/xahuqqcs.json"
-                                            trigger="loop"
-                                            stroke="bold"
-                                            state="loop-rotate"
-                                            style="width:250px;height:250px">
+                                            class="max-w-[250px] max-h-[250px] w-[160px] h-[160px] sm:w-[250px] sm:h-[250px]"
+                                            src="https://cdn.lordicon.com/dangivhk.json"
+                                            trigger="hover"
+                                            stroke="light"
+                                            colors="primary:#121331,secondary:#da22ff"
+                                        >
                                         </lord-icon>
-                                        <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400] ">Ваша заявка поступила к нам на обработку </h4>
-                                        <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400] ">Скоро мы с вами свяжемся </h4>
+                                        <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Ваша заявка поступила к нам на обработку</h4>
+                                        <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Скоро мы с вами свяжемся</h4>
                                     </div>
                                 </div>
                             @else

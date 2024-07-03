@@ -23,12 +23,17 @@ class MainController extends Controller
 
     public function feedback(FeedbackFormRequest $request)
     {
+
+        if (!($request->agreement)){
+
+            return Redirect::to(url()->previous() . '#feedback')->with('status', 'feedback-not-ok');
+        };
         $validated = $request->validated();
 
         $feedback = Feedback::create($validated);
 
         Mail::send(new NotificationOfFeedback($feedback));
 
-        return Redirect::back()->with('status','feedback-ok');
+        return Redirect::to(url()->previous() . '#feedback')->with('status','feedback-ok');
     }
 }

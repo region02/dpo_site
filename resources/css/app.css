@@ -4,6 +4,11 @@
 
 
 @layer components {
+
+    html{
+        scroll-behavior: smooth;
+    }
+
     .bg-color-main {
         background: linear-gradient(90deg, #000428 0%, #004E92 100%);
     }

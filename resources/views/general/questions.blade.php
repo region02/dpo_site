@@ -14,16 +14,20 @@
             </div>
 
 
-            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] flex flex-col justify-center gap-[30px]" action="{{route('index.questions')}}" method="post">
+            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] flex flex-col justify-center gap-[30px]"
+                  action="{{route('index.questions')}}" method="post">
                 @csrf
                 <div class=" relative ">
-                    <label for="name" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
-                    <input type="text" id="name" name="name" autocomplete="full-name" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "  required>
+                    <label for="name"
+                           class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
+                    <input type="text" id="name" name="name" autocomplete="full-name"
+                           class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
+                           required>
                 </div>
                 <h5 class="text-[#fff] text-[18px] font-[600]">Предпочитаемый способ связи:</h5>
                 <div class=" radio-party flex  justify-center flex-col gap-[20px] sm:gap-[15px] sm:flex-row">
                     <div class="flex items-center me-4">
-                        <input  id="messanger-bt" type="radio" value="мессенджер" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input id="messanger-bt" type="radio" value="мессенджер" name="feedback_type" class=" relative w-[25px] h-[25px]      bg-[#255C96] border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -37,11 +41,11 @@
                                                                                             after:absolute after:content-[' ']
                                                                                             after:w-[27px] after:h-[27px] after:rounded-[50%]
                                                                                             after:border-[3px] after:border-solid after:border-[#DA22FF]
-                                                                                            after:z-11 after:left-[-2px] after:top-[-2px]" >
+                                                                                            after:z-11 after:left-[-2px] after:top-[-2px]">
                         <label for="messanger-bt" class="ms-2 text-sm font-medium text-[#fff] ">мессенджер</label>
                     </div>
                     <div class="flex items-center me-4">
-                        <input  id="email-bt" type="radio" value="почта" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input id="email-bt" type="radio" value="почта" name="feedback_type" class=" relative w-[25px] h-[25px]      bg-[#255C96] border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -59,7 +63,7 @@
                         <label for="email-bt" class="ms-2 text-sm font-medium text-[#fff] ">почта</label>
                     </div>
                     <div class="flex items-center me-4">
-                        <input  id="phone-bt" type="radio" checked value="телефон" name="feedback_type"  class=" relative w-[25px] h-[25px]      bg-transparent border-[#fff]
+                        <input id="phone-bt" type="radio" checked value="телефон" name="feedback_type" class=" relative w-[25px] h-[25px]      bg-[#255C96] border-[#fff]
                                                                                             border-[2px] z-0 checked:border-transparent checked:bg-transparent
                                                                                             before:scale-0
                                                                                             checked:before:scale-100
@@ -78,16 +82,19 @@
                     </div>
 
 
-
                 </div>
 
                 <div class=" relative  ">
-                    <label for="name" id="radio-link" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">телефон</label>
-                    <input type="text" id="contact" name="contact" autocomplete="phone" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 " required>
+                    <label for="name" id="radio-link"
+                           class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">телефон</label>
+                    <input type="text" id="contact" name="contact" autocomplete="phone"
+                           class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
+                           required>
                 </div>
 
                 <div class=" relative  ">
-                    <label for="question" id="radio-link" class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">вопрос</label>
+                    <label for="question" id="radio-link"
+                           class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">вопрос</label>
                     <textarea x-data="{
                                     resize () {
                                         $el.style.height = '60px';
@@ -95,11 +102,47 @@
                                     }
                                 }"
                               x-init="resize()"
-                              @input="resize()" type="text" id="question" name="question" autocomplete="off" class="bg-transparent border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] " placeholder="У меня возник вопрос по поводу..." required></textarea>
+                              @input="resize()" type="text" id="question" name="question" autocomplete="off"
+                              class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] "
+                              placeholder="У меня возник вопрос по поводу..." required></textarea>
+                </div>
+
+                <div>
+                    <div class="inline-flex items-center gap-3">
+                        <label class="relative flex items-center  rounded-full cursor-pointer" htmlFor="agreement">
+                            <input type="checkbox" required name="agreement"
+                                   class="bg-[#255C96] outline outline-[#DA21FF] outline-[3px] border-none before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-[#255C96] checked:before:bg-gray-900 hover:before:opacity-10 !ring-[#DA21FF] !ring-offset-[#DA21FF]"
+                                   id="agreement"/>
+                            <span
+                                class="absolute text-[#DA21FF] ring-[#DA21FF] ring-offset-[#DA21FF] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-[20px] w-7 stroke-[3px]"
+                                   viewBox="0 0 20 20" fill="currentColor"
+                                   stroke="currentColor" stroke-width="1">
+                                <path fill-rule="evenodd"
+                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                      clip-rule="evenodd"></path>
+                              </svg>
+                            </span>
+                        </label>
+                        <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="link">
+                            <p class="flex items-center flex-wrap font-sans text-[16px] xs:text-sm  text-[#fff]  antialiased font-medium leading-relaxed text-blue-gray-900">
+                                Я согласен на обработку &nbsp;
+
+                                <a href="#"
+                                   class="block w-fit font-sans  antialiased font-medium leading-relaxed text-blue-500 transition-colors underline underline-offset-[4px] hover:text-[#DA21FF]">
+                                    персональных данных
+                                </a>
+
+                            </p>
+                        </label>
+                    </div>
                 </div>
 
 
-                <button type="submit" class="text-white  w-[141px] bg-gradient-to-r from-[#DA22FF] to-[#9733EE] px-5 py-2.5 text-center rounded-[20px] mx-auto lg:mx-0">Отправить</button>
+                <button type="submit"
+                        class="text-white  w-[141px] bg-gradient-to-r from-[#DA22FF] to-[#9733EE] px-5 py-2.5 text-center rounded-[20px] mx-auto lg:mx-0">
+                    Отправить
+                </button>
             </form>
 
             <div class="feedback__contacts flex flex-col gap-[20px] flex-1">
@@ -124,67 +167,97 @@
             </div>
         </div>
     </div>
-{{--    <div class="wrapper --}}
-{{--    bg-white bg-opacity-10--}}
-{{--    border-[1px] border-[#ffffff] border-opacity-10 --}}
-{{--    my-16 py-16">--}}
-{{--        <div class="flex flex-col md:flex-row w-full px-5" id="contact-form">--}}
-{{--            <div class="md:w-1/2 w-full flex flex-col justify-between">--}}
-{{--                <div>--}}
-{{--                    <h3 class="uppercase font-sans text-[#E5E5E5] --}}
-{{--                        text-[2.5rem] font-[700] tracking-wider leading-[1.375rem]--}}
-{{--                        max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]--}}
-{{--                        sm:text-[1.5rem] sm:font-[700] sm:tracking-wider sm:leading-[0.5rem]--}}
-{{--                        md:text-[2.0rem] md:font-[700] md:tracking-wider md:leading-[1.2rem]--}}
-{{--                        lg:text-[2.3rem] lg:font-[700] lg:tracking-wider lg:leading-[1.35rem]--}}
-{{--                        xl:text-[2.5rem] xl:font-[700] xl:tracking-wider xl:leading-[1.375rem]--}}
-{{--                        mb-6">--}}
-{{--                        Остались вопросы?--}}
-{{--                    </h3>--}}
-{{--                    <p class="font-sans text-[#E5E5E5]--}}
-{{--                            text-[1.25rem] font-[700] tracking-wider">--}}
-{{--                        Мы с вами свяжемся</p>--}}
+    <div x-data="{ modalOpen: @json(session('status') ? true : false) }"
+         :class="{ 'z-40': modalOpen }" class="relative w-auto h-auto">
 
-{{--                </div>--}}
-{{--                <div>--}}
-{{--                    <ul>--}}
-{{--                        <li>1</li>--}}
-{{--                        <li>2</li>--}}
-{{--                        <li>3</li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
+        <template x-teleport="body">
+            <div x-show="modalOpen" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen"
+                 x-cloak>
+                <div x-show="modalOpen"
+                     x-transition:enter="ease-out duration-300"
+                     x-transition:enter-start="opacity-0"
+                     x-transition:enter-end="opacity-100"
+                     x-transition:leave="ease-in duration-300"
+                     x-transition:leave-start="opacity-100"
+                     x-transition:leave-end="opacity-0"
+                     @click="modalOpen=false"
+                     class="absolute inset-0 w-full h-full backdrop-blur-md bg-opacity-70"></div>
+                @if(session('status') == 'feedback-ok')
+                    <div x-show="modalOpen"
+                         x-trap.inert.noscroll="modalOpen"
+                         x-transition:enter="ease-out duration-300"
+                         x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95"
+                         x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                         x-transition:leave="ease-in duration-200"
+                         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                         x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
+                         class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
+                                        sm:max-w-fit flex flex-col gap-[40px]">
+                        <div class="flex items-center justify-between gap-[30px] pb-3">
+                            <h4 class="card__subtitle text-[#fff] text-[20px] font-[700] ">Отправлено</h4>
+                            <div class="gradient-border before:p-[5px] relative w-12 h-12">
+                                <button @click="modalOpen=false"
+                                        class="border-none absolute flex items-center justify-center text-[#E5E5E5] rounded-[15px]  border-[#f5f5f5] border-[2px] focus-visible:ring-0 focus-visible:outline-0">
+                                    <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <lord-icon
+                                class="max-w-[250px] max-h-[250px] w-[160px] h-[160px] sm:w-[250px] sm:h-[250px]"
+                                src="https://cdn.lordicon.com/dangivhk.json"
+                                trigger="hover"
+                                stroke="light"
+                                colors="primary:#121331,secondary:#da22ff"
+                                >
+                            </lord-icon>
+                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Ваша заявка поступила к нам на обработку</h4>
+                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Скоро мы с вами свяжемся</h4>
+                        </div>
+                    </div>
+                @else
+                    <div x-show="modalOpen"
+                         x-trap.inert.noscroll="modalOpen"
+                         x-transition:enter="ease-out duration-300"
+                         x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95"
+                         x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                         x-transition:leave="ease-in duration-200"
+                         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                         x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
+                         class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
+                                        sm:max-w-fit flex flex-col gap-[40px]">
+                        <div class="flex items-center justify-between gap-[30px] pb-3">
+                            <h4 class="card__subtitle text-[#fff] text-[20px] font-[400] uppercase">Не отправлено</h4>
+                            <div class="gradient-border before:p-[5px] relative w-12 h-12">
+                                <button @click="modalOpen=false"
+                                        class="border-none absolute flex items-center justify-center text-[#E5E5E5] rounded-[15px]  border-[#f5f5f5] border-[2px] focus-visible:ring-0 focus-visible:outline-0">
+                                    <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/dangivhk.json"
+                                trigger="hover"
+                                stroke="light"
+                                colors="primary:#121331,secondary:#da22ff"
+                                style="width:250px;height:250px">
+                            </lord-icon>
+                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Ваша заявка не поступила к нам на обработку</h4>
+                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">т.к. вы не подтвердили согласие на обработку персональных данных</h4>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </template>
+    </div>
 
-{{--            </div>--}}
-{{--            <div class="md:w-1/2 w-full mt-10 md:mt-0 md:pl-28">--}}
-{{--                <h1 class="text-4xl text-gray-800 sm:text-4xl font-bold title-font mb-4">Contact Form</h1>--}}
-{{--                <form action="send-contact.php" method="post" id="submit-contact-form">--}}
-{{--                    <div class="p-2 w-full">--}}
-{{--                        <div class="relative">--}}
-{{--                            <label for="name" class="leading-7 py-4 text-lg text-gray-900">Your Name</label>--}}
-{{--                            <input type="text" id="name" name="name" required="" class="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out ">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="p-2 w-full">--}}
-{{--                        <div class="relative">--}}
-{{--                            <label for="email" class="leading-7 py-4 text-lg text-gray-900">Your Email</label>--}}
-{{--                            <input type="email" id="email" name="email" required="" class="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out ">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="p-2 w-full">--}}
-{{--                        <div class="relative">--}}
-{{--                            <label for="message" class="leading-7 py-4 text-lg text-gray-900">Your Message</label>--}}
-{{--                            <textarea id="message" name="message" required="" class="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out "></textarea>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="p-2 w-full">--}}
-{{--                        <button type="submit" class="flex text-white bg-gray-900 border-0 py-4 px-6 focus:outline-none hover:bg-blue-900 rounded text-xl font-bold shadow-lg mx-0 flex-col text-center g-recaptcha">--}}
-{{--                            Send Message ✉--}}
-{{--                        </button>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 </section>
 
 
