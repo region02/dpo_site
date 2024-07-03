@@ -8,7 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-
+        transitionProperty: {
+            'width': 'width'
+        },
     },
     screens: {
           'xs': '360px',

@@ -24,108 +24,158 @@
 
     <main class=" w-full mx-auto ">
         <section class="hero" id="hero">
-            <div class="hero-content grid sm:grid-flow-col sm:grid-rows-1  min-h-[70dvh]">
-                <div class=" overflow-hidden flex flex-col items-center justify-center
-                            border-[1px] border-[#ffffff] border-opacity-10
-                            pt-[6.5rem] pb-[6.5rem] 2xl:gap-4  "
+            <style>
+                @keyframes flyThrough {
+                    0% {
+                        opacity: 1;
+                        transform: translateY(-400%);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(400%);
+                    }
+                }
+
+                @keyframes settleIn {
+                    0% {
+                        opacity: 1;
+                        transform: translateY(-400%);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .letter {
+                    display: inline-block;
+                    opacity: 0;
+                }
+
+                .letter.animate {
+                    animation: flyThrough 0.35s forwards, settleIn 0.35s 0.35s forwards;
+                }
+
+
+                @keyframes settleOut {
+                    0% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(400%);
+                    }
+                }
+                .letter.fall {
+                    animation: settleOut 0.35s forwards;
+                }
+
+                .transition-width {
+                    transition: width 1s;
+                }
+            </style>
+            <div class="hero-content grid sm:grid-col-[45%_55%] sm:grid-rows-1  sm:min-h-[70dvh]">
+                <div class="h-[300px] md:h-[450px] xl:h-auto overflow-hidden flex flex-col items-center justify-center
+                border-[1px] border-[#ffffff] border-opacity-10 pt-[6.5rem] pb-[6.5rem] 2xl:gap-4"
                      x-data="{
-                                text1: '',
-                                text2: '',
-                                textArray1 : ['эффективное', 'актуальное', 'интересное', 'востребованное'],
-                                textArray2 : ['для вас', 'для партнеров', 'для бизнеса', 'для вузов'],
-                                textIndex: 0,
-                                charIndex1: 0,
-                                charIndex2: 0,
-                                typeSpeed: 40,
-                                pauseEnd: 3000,
-                                pauseStart: 0,
-                                direction: 'forward'
-                            }"
-                     x-init="$nextTick(() => {
-                                let typingInterval = setInterval(startTyping, $data.typeSpeed);
+            text1: '',
+            text2: '',
+            textArray1: ['эффективное', 'актуальное', 'интересное', 'востребованное'],
+            textArray2: ['для вас', 'для партнеров', 'для бизнеса', 'для вузов'],
+            textIndex1: 0,
+            textIndex2: 0,
+            containerWidth1: 'auto',
+            containerWidth2: 'auto',
+            animateText1() {
+                this.resetAnimation('text1');
+                setTimeout(() => {
+                    this.text1 = this.textArray1[this.textIndex1].replace(/ /g, '\u00A0');
+                    this.textIndex1 = (this.textIndex1 + 1) % this.textArray1.length;
+                    this.$nextTick(() => {
+                        this.animateLetters('text1');
+                        this.adjustContainerWidth('text1', 'containerWidth1');
+                    });
+                }, 350);
+            },
+            animateText2() {
+                this.resetAnimation('text2');
+                setTimeout(() => {
+                    this.text2 = this.textArray2[this.textIndex2].replace(/ /g, '\u00A0');
+                    this.textIndex2 = (this.textIndex2 + 1) % this.textArray2.length;
 
-                                function startTyping(){
-                                    let current1 = $data.textArray1[ $data.textIndex ];
-                                    let current2 = $data.textArray2[ $data.textIndex ];
-
-                                    // check to see if we hit the end of the string
-                                    if($data.charIndex1 > current1.length && $data.charIndex2 > current2.length){
-                                            $data.direction = 'backward';
-                                            clearInterval(typingInterval);
-
-                                            setTimeout(function(){
-                                                typingInterval = setInterval(startTyping, $data.typeSpeed);
-                                            }, $data.pauseEnd);
-                                    }
-
-                                    $data.text1 = current1.substring(0, $data.charIndex1);
-                                    $data.text2 = current2.substring(0, $data.charIndex2);
-
-                                    if($data.direction == 'forward')
-                                    {
-                                        $data.charIndex1 += 1;
-                                        $data.charIndex2 += 1;
-                                    }
-                                    else
-                                    {
-                                        if($data.charIndex1 == 0 && $data.charIndex2 == 0)
-                                        {
-                                            $data.direction = 'forward';
-                                            clearInterval(typingInterval);
-                                            setTimeout(function(){
-                                                $data.textIndex += 1;
-                                                if($data.textIndex >= $data.textArray1.length)
-                                                {
-                                                    $data.textIndex = 0;
-                                                }
-                                                typingInterval = setInterval(startTyping, $data.typeSpeed);
-                                            }, $data.pauseStart);
-                                        }
-                                        $data.charIndex1 -= 1;
-                                        $data.charIndex2 -= 1;
-                                    }
-                                }
-
-                        })">
-                    <div
-                        class="relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2  2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                    this.$nextTick(() => {
+                        this.animateLetters('text2');
+                        this.adjustContainerWidth('text2', 'containerWidth2');
+                    });
+                }, 350);
+            },
+            resetAnimation(textKey) {
+                let elements = this.$refs[textKey].querySelectorAll('.letter');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('fall');
+                    }, index * 60); // Задержка 0.06 секунды для каждой буквы
+                });
+            },
+            animateLetters(textKey) {
+                let elements = this.$refs[textKey].querySelectorAll('.letter');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.remove('fall', 'hidden');
+                        el.classList.add('animate');
+                    }, index * 60); // Задержка 0.06 секунды для каждой буквы
+                });
+            },
+            adjustContainerWidth(textKey, widthKey) {
+                setTimeout(() => {
+                    let width = this.$refs[textKey].offsetWidth;
+                    this[widthKey] = (width + 30) + 'px';
+                }, 50);
+            }
+        }"
+                     x-init="animateText1(); animateText2(); setInterval(() => { animateText1(); animateText2(); }, 4000)">
+                    <div :style="{ width: containerWidth1 }" class="transition-width whitespace-nowrap overflow-hidden relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="first-lane uppercase font-sans text-[#E5E5E5]
-                                   text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
-                                   max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
-                                   sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
-                                   md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
-                                   lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                   xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
-                                   2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
-                            x-text="text1">
+                       text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
+                       max-[500px]:text-[1.75rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
+                       sm:text-[2.0rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
+                       md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
+                       lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
+                       xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
+                       2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
+                            x-ref="text1">
+                            <template x-for="(char, index) in text1.split('')" :key="index">
+                                <span class="letter hidden" x-text="char"></span>
+                            </template>
                         </h3>
-
                     </div>
                     <div class="w-fit m-1 p-5 md:m-2 md:p-5">
                         <h3 class="uppercase font-sans text-[#E5E5E5]
-                                    text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
-                                    max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
-                                    sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
-                                    md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
-                                    lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
-                                    2xl:text-[3.2rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]">
+                        text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
+                        max-[500px]:text-[1.75rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
+                        sm:text-[2.0rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
+                        md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
+                        lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
+                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
+                        2xl:text-[3.2rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]">
                             обучение
                         </h3>
                     </div>
-                    <div
-                        class="relative flex items-center justify-center h-auto 3-1-lane m-0 p-5 md:m-2  2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                    <div :style="{ width: containerWidth2 }" class="transition-width whitespace-nowrap overflow-hidden relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="last-lane uppercase font-sans text-[#E5E5E5]
-                                    text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
-                                    max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
-                                    sm:text-[1.5rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
-                                    md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
-                                    lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
-                                    xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
-                                    2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
-                            x-text="text2">
+                        text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
+                        max-[500px]:text-[1.75rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
+                        sm:text-[2.0rem] sm:font-[800] sm:tracking-wider sm:leading-[0.5rem]
+                        md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
+                        lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
+                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
+                        2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
+                            x-ref="text2">
+                            <template x-for="(char, index) in text2.split('')" :key="index">
+                                <span class="letter hidden" x-text="char"></span>
+                            </template>
                         </h3>
-
                     </div>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2
@@ -136,7 +186,7 @@
                                 border-l-0 border-t-0
                                  relative pr-3 lg:pr-12">
                         <p class="uppercase font-sans text-white font-bold
-                                    text-sm leading-[1.1rem]
+                                    text-[16px] leading-[1.1rem]
                                     sm:text-lg sm:leading-[1.55rem]
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
@@ -149,14 +199,14 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px] ">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                     <div class="border-[2px] border-[#ffffff] border-opacity-15
                                 border-t-0 border-l-0 lg:border-r-0 relative
                                 pr-3 lg:pr-12">
                         <p class="uppercase font-sans text-white font-bold
-                                    text-sm leading-[1.1rem]
+                                    text-[16px] leading-[1.1rem]
                                     sm:text-lg sm:leading-[1.55rem]
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
@@ -169,15 +219,15 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px] lg:pr-[70px] ">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                     <div class="border-[2px] border-[#ffffff] border-opacity-15
                                 border-b-0 border-t-0 border-l-0
                                  relative pr-3 lg:pr-12">
                         <p class="uppercase font-sans text-white font-bold
-                                    text-sm leading-[1.1rem]
+                                    text-[16px] leading-[1.1rem]
                                     sm:text-lg sm:leading-[1.55rem]
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
@@ -190,9 +240,9 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px]">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                     <div class="border-r-[2px] border-t-2 border-b-[1px]
@@ -200,7 +250,7 @@
                                 relative lg:border-t-0 lg:border-r-0 xl:border-b-0
                                 pr-3 lg:pr-12">
                         <p class="uppercase font-sans text-white font-bold
-                                    text-sm leading-[1.1rem]
+                                    text-[16px] leading-[1.1rem]
                                     sm:text-lg sm:leading-[1.55rem]
                                     md:text-lg md:leading-[1.55rem]
                                     lg:text-xl lg:leading-[1.6rem]
@@ -213,10 +263,10 @@
                         </p>
                         <div class="hero__info-dots py-[25px] px-[30px] sm:py-[30px] sm:px-[15px] absolute
                                     right-0 bottom-0 flex gap-[10px] lg:pr-[70px]">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
-                            <img class="info-dots" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
+                            <img class="info-dots w-[20px] sm:w-[30px]" src="{{ url('img/icons/info-dots.svg') }}">
                         </div>
                     </div>
                 </div>
