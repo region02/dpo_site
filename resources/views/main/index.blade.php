@@ -136,7 +136,7 @@
             }
         }"
                      x-init="animateText1(); animateText2(); setInterval(() => { animateText1(); animateText2(); }, 4000)">
-                    <div :style="{ width: containerWidth1 }" class="transition-width whitespace-nowrap overflow-hidden relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                    <div :style="{ width: containerWidth1 }" class="transition-width whitespace-nowrap overflow-hidden relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 2xl:p-8 2xl:px-10 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="first-lane uppercase font-sans text-[#E5E5E5]
                        text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                        max-[500px]:text-[1.75rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
@@ -144,7 +144,7 @@
                        md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                        lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
-                       2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
+                       2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem] 2xl:py-[8px] 2xl:px-[12px]"
                             x-ref="text1">
                             <template x-for="(char, index) in text1.split('')" :key="index">
                                 <span class="letter hidden" x-text="char"></span>
@@ -163,7 +163,7 @@
                             обучение
                         </h3>
                     </div>
-                    <div :style="{ width: containerWidth2 }" class="transition-width whitespace-nowrap overflow-hidden relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 2xl:p-8 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
+                    <div :style="{ width: containerWidth2 }" class="transition-width whitespace-nowrap overflow-hidden relative flex items-center justify-center h-auto 1-1-lane m-0 p-5 md:m-2 2xl:p-8 2xl:px-10 bg-gradient-to-r from-[#DA22FF] to-[#9733EE] rounded-[6.25rem]">
                         <h3 class="last-lane uppercase font-sans text-[#E5E5E5]
                         text-[2.5rem] font-[800] tracking-wider leading-[1.375rem]
                         max-[500px]:text-[1.75rem] max-[500px]:font-[700] max-[500px]:tracking-wider max-[500px]:leading-[0.5rem]
@@ -171,7 +171,7 @@
                         md:text-[2.0rem] md:font-[800] md:tracking-wider md:leading-[1.2rem]
                         lg:text-[2.3rem] lg:font-[800] lg:tracking-wider lg:leading-[1.35rem]
                         xl:text-[2.5rem] xl:font-[800] xl:tracking-wider xl:leading-[1.375rem]
-                        2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem]"
+                        2xl:text-[3.7rem] 2xl:font-[800] 2xl:tracking-wider 2xl:leading-[1.475rem] 2xl:py-[8px] 2xl:px-[12px]"
                             x-ref="text2">
                             <template x-for="(char, index) in text2.split('')" :key="index">
                                 <span class="letter hidden" x-text="char"></span>

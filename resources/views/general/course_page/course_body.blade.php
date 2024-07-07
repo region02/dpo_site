@@ -1,5 +1,5 @@
 <main @if(session('status') == 'registered') x-data="{ modalOpen: true }" @else x-data="{ modalOpen: false }" @endif class="px-5 sm:px-8 xl:px-44 pt-5 [&_h2]:text-[22px] xs:[&_h2]:text-[30px] sm:[&_h2]:text-[40px]">
-    <a href="/" class="flex gap-[10px]">
+    <a href="{{ route('course.all') }}" class="flex gap-[10px]">
         <img src="{{url('img/icons/return_arrow-white.svg')}}">
         <h5 class="text-[#E5E5E5] text-[16px] font-[400]">все курсы</h5>
     </a>
