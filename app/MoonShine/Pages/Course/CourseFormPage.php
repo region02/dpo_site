@@ -100,29 +100,17 @@ class CourseFormPage extends FormPage
                             ->creatable()
                             ->removable(),
 
+
                         Json::make('Как проходят занятия?', 'section_how_it_goes')
                             ->fields([
-                                TinyMce::make('Первый блок', 'first')
+                                TinyMce::make('Пункт', "point")
                                     ->default('У вас будет <strong>8 часов практики</strong> в режиме реального времени каждую неделю')
                                     ->hint('Можно выделять жирным текст')
-                                    ->toolbar('bold')
+                                    ->toolbar('bold color')
                                     ->menubar('edit view tools')
-                                    ->locale('ru'),
-                                TinyMce::make('Второй блок', 'second')
-                                    ->default('Вы получите <strong>обратную связь</strong> от преподавателя по каждому выполненному заданию')
-                                    ->hint('Можно выделять жирным текст')
-                                    ->hint('Можно выделять жирным текст')
-                                    ->toolbar('bold')
-                                    ->menubar('edit view tools')
-                                    ->locale('ru'),
-                                TinyMce::make('Третий блок', 'third')
-                                    ->default('На каждом занятии вы приобретете определенный <strong>багаж знаний</strong>, сформированных переводческих умений и навыков')
-                                    ->hint('Можно выделять жирным текст')
-                                    ->hint('Можно выделять жирным текст')
-                                    ->toolbar('bold')
-                                    ->menubar('edit view tools')
-                                    ->locale('ru'),
-                            ])->creatable(false)->removable(false),
+                                    ->locale('ru')
+
+                            ])->creatable()->removable(),
 
                         Json::make('Расписание', 'section_schedule')
                             ->fields([

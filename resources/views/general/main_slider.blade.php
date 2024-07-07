@@ -1,12 +1,30 @@
 
 <section class='course_gallery pl-4 py-12 px-3 lg:px-12' id='course_gallery'>
 
+    <div class="flex justify-between items-center mb-[40px]">
+        <h2 class="uppercase font-sans text-[#E5E5E5]
+                        text-[2.5rem] font-[800] tracking-wider leading-[2.975rem] sm:leading-[1.975rem]
+                        max-[500px]:text-[1.5rem] max-[500px]:font-[700] max-[500px]:tracking-wider
+                        sm:text-[1.5rem] sm:font-[800] sm:tracking-wider
+                        md:text-[2.0rem] md:font-[800] md:tracking-wider
+                        lg:text-[2.3rem] lg:font-[800] lg:tracking-wider
+                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider ">Курсы</h2>
+        <div class="relative h-full flex items-center gap-4 sm:gap-10">
+            <div class="relative h-[50px] w-[50px]">
+                <img class=" swiper-button-prev !left-0 !right-0 !translate-x-0 !translate-y-0 !relative inset-0 !h-[50px] !w-[50px] object-cover rotate-180" src="{{ url('img/icons/next-arrow-slider.svg') }}" alt="slider-arrow">
+            </div>
+            <div class="relative h-[50px] w-[50px]">
+                <img class=" swiper-button-next !left-0 !right-0 !translate-x-0 !translate-y-0  !relative inset-0 !h-[50px] !w-[50px] object-cover " src="{{ url('img/icons/next-arrow-slider.svg') }}" alt="slider-arrow">
+            </div>
+        </div>
+
+    </div>
     <div class="swiper">
         <div class="swiper-wrapper swiper-wrapper_flex ">
 
             <div class="swiper-slide swiper-slide_flex h-auto">
                 <a href="{{route('course.all')}}" class="slide__card all-courses_animation relative  rounded-[20px] rounded-br-[95px]
-                            max-w-[230px] h-[168px] flex justify-between p-5
+                            max-w-[280px] h-[168px] flex justify-between p-5
                             min-[380px]:max-w-[300px] min-[380px]:h-[210px]
                             min-[480px]:max-w-[400px] min-[480px]:h-[280px]
                             border-1 border-solid border-transparent hover:border-[#ffffff]">
@@ -63,8 +81,7 @@
 
 
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+
     </div>
 
 

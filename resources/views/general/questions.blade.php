@@ -214,7 +214,7 @@
                                 colors="primary:#121331,secondary:#da22ff"
                                 >
                             </lord-icon>
-                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Ваша заявка поступила к нам на обработку</h4>
+                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Ваша заявка принята, скоро мы с вами свяжемся</h4>
                             <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Скоро мы с вами свяжемся</h4>
                         </div>
                     </div>
@@ -250,7 +250,7 @@
                                 style="width:250px;height:250px">
                             </lord-icon>
                             <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Ваша заявка не поступила к нам на обработку</h4>
-                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">т.к. вы не подтвердили согласие на обработку персональных данных</h4>
+                            <h4 class="card__subtitle text-[#fff] text-[20px] text-center font-[400]">Убедитесь, что все данные введены верно</h4>
                         </div>
                     </div>
                 @endif
