@@ -109,6 +109,10 @@ class CourseFormPage extends FormPage
                                     ->toolbar('bold color')
                                     ->menubar('edit view tools')
                                     ->locale('ru')
+                                    ->addPlugins('paste')
+                                    ->addConfig('paste_data_images', 'false')
+                                    ->addConfig('paste_as_text', 'true')
+                                    ->addConfig('paste_merge_formats', 'true')
 
                             ])->creatable()->removable(),
 
