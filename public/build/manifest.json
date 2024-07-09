@@ -1,34 +1,38 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-vPRp3L4b.css",
-    "isEntry": true,
-    "src": "resources/css/app.css"
+    "file": "assets/app-CUSkKovR.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-4rXZmb_a.js",
+    "file": "assets/app-CfTYDxcj.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
     "imports": [
       "resources/js/main_slider.js",
       "resources/js/feedback.js"
-    ],
-    "isEntry": true,
-    "src": "resources/js/app.js"
+    ]
   },
   "resources/js/courses.js": {
-    "file": "assets/courses-zoqoYLaH.js",
-    "isEntry": true,
-    "src": "resources/js/courses.js"
+    "file": "assets/courses-DGwtFPo0.js",
+    "name": "courses",
+    "src": "resources/js/courses.js",
+    "isEntry": true
   },
   "resources/js/feedback.js": {
-    "file": "assets/feedback-TVV259WY.js",
-    "isEntry": true,
-    "src": "resources/js/feedback.js"
+    "file": "assets/feedback-D2uRIAsO.js",
+    "name": "feedback",
+    "src": "resources/js/feedback.js",
+    "isEntry": true
   },
   "resources/js/main_slider.js": {
-    "css": [
-      "assets/main_slider-pjvkTkke.css"
-    ],
-    "file": "assets/main_slider-8IayCWk6.js",
+    "file": "assets/main_slider-D64r3ECq.js",
+    "name": "main_slider",
+    "src": "resources/js/main_slider.js",
     "isEntry": true,
-    "src": "resources/js/main_slider.js"
+    "css": [
+      "assets/main_slider-CmO-ROSR.css"
+    ]
   }
 }
