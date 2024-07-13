@@ -9,22 +9,23 @@
                         sm:text-[1.5rem] sm:font-[800] sm:tracking-wider
                         md:text-[2.0rem] md:font-[800] md:tracking-wider
                         lg:text-[2.3rem] lg:font-[800] lg:tracking-wider
-                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider ">остались вопросы?</h2>
-                <h5 class="text-[#fff] text-[20px] font-[600]">Мы с вами свяжемся</h5>
+                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider
+                        3xl:text-[2.8rem]">остались вопросы?</h2>
+                <h5 class="text-[#fff] text-[20px] 3xl:text-[25px] font-[600]">Мы с вами свяжемся</h5>
             </div>
 
 
-            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] flex flex-col justify-center gap-[30px]"
+            <form class="feedback__form  w-[100%] max-w-[100%] lg:max-w-[383px] 3xl:max-w-[520px] flex flex-col justify-center gap-[30px] 3xl:gap-[40px]"
                   action="{{route('index.questions')}}" method="post">
                 @csrf
                 <div class=" relative ">
                     <label for="name"
-                           class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 translate-y-[-50%] translate-x-[5px]">ФИО</label>
+                           class=" absolute inline-flex mb-2 text-sm 3xl:text-[19px] font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 3xl:px-2 py-[3px] translate-y-[-50%] translate-x-[5px]">ФИО</label>
                     <input type="text" id="name" name="name" autocomplete="full-name"
-                           class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
+                           class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm 3xl:text-[20px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
                            required>
                 </div>
-                <h5 class="text-[#fff] text-[18px] font-[600]">Предпочитаемый способ связи:</h5>
+                <h5 class="text-[#fff] text-[18px] 3xl:text-[23px] font-[600]">Предпочитаемый способ связи:</h5>
                 <div class=" radio-party flex  justify-center flex-col gap-[20px] sm:gap-[15px] sm:flex-row">
                     <div class="flex items-center me-4">
                         <input id="messanger-bt" type="radio" value="мессенджер" name="feedback_type" class=" relative w-[25px] h-[25px]      bg-[#255C96] border-[#fff]
@@ -42,7 +43,7 @@
                                                                                             after:w-[27px] after:h-[27px] after:rounded-[50%]
                                                                                             after:border-[3px] after:border-solid after:border-[#DA22FF]
                                                                                             after:z-11 after:left-[-2px] after:top-[-2px]">
-                        <label for="messanger-bt" class="ms-2 text-sm font-medium text-[#fff] ">мессенджер</label>
+                        <label for="messanger-bt" class="ms-2 text-sm 3xl:text-[20px] font-medium text-[#fff] ">мессенджер</label>
                     </div>
                     <div class="flex items-center me-4">
                         <input id="email-bt" type="radio" value="почта" name="feedback_type" class=" relative w-[25px] h-[25px]      bg-[#255C96] border-[#fff]
@@ -60,7 +61,7 @@
                                                                                             after:w-[27px] after:h-[27px] after:rounded-[50%]
                                                                                             after:border-[3px] after:border-solid after:border-[#DA22FF]
                                                                                             after:z-11 after:left-[-2px] after:top-[-2px]">
-                        <label for="email-bt" class="ms-2 text-sm font-medium text-[#fff] ">почта</label>
+                        <label for="email-bt" class="ms-2 text-sm 3xl:text-[20px] font-medium text-[#fff] ">почта</label>
                     </div>
                     <div class="flex items-center me-4">
                         <input id="phone-bt" type="radio" checked value="телефон" name="feedback_type" class=" relative w-[25px] h-[25px]      bg-[#255C96] border-[#fff]
@@ -78,7 +79,7 @@
                                                                                             after:w-[27px] after:h-[27px] after:rounded-[50%]
                                                                                             after:border-[3px] after:border-solid after:border-[#DA22FF]
                                                                                             after:z-11 after:left-[-2px] after:top-[-2px]">
-                        <label for="phone-bt" class="ms-2 text-sm font-medium text-[#fff] ">телефон</label>
+                        <label for="phone-bt" class="ms-2 text-sm 3xl:text-[20px] font-medium text-[#fff] ">телефон</label>
                     </div>
 
 
@@ -86,15 +87,15 @@
 
                 <div class=" relative  ">
                     <label for="name" id="radio-link"
-                           class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">телефон</label>
+                           class=" absolute inline-flex mb-2 text-sm 3xl:text-[19px] font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 3xl:px-2 py-[3px] translate-y-[-50%] translate-x-[5px]">телефон</label>
                     <input type="text" id="contact" name="contact" autocomplete="phone"
-                           class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
+                           class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm 3xl:text-[20px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
                            required>
                 </div>
 
                 <div class=" relative  ">
                     <label for="question" id="radio-link"
-                           class=" absolute inline-flex mb-2 text-sm font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">вопрос</label>
+                           class=" absolute inline-flex mb-2 text-sm 3xl:text-[19px] font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 3xl:px-2 py-[3px] translate-y-[-50%] translate-x-[5px]">вопрос</label>
                     <textarea x-data="{
                                     resize () {
                                         $el.style.height = '60px';
@@ -103,7 +104,7 @@
                                 }"
                               x-init="resize()"
                               @input="resize()" type="text" id="question" name="question" autocomplete="off"
-                              class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] "
+                              class="bg-[#255C96] border border-[#fff] text-[#fff] text-sm 3xl:text-[20px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 pt-[1.2rem] "
                               placeholder="У меня возник вопрос по поводу..." required></textarea>
                 </div>
 
@@ -125,7 +126,7 @@
                             </span>
                         </label>
                         <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="link">
-                            <p class="flex items-center flex-wrap font-sans text-[16px] xs:text-sm  text-[#fff]  antialiased font-medium leading-relaxed text-blue-gray-900">
+                            <p class="flex items-center flex-wrap font-sans text-[16px] xs:text-sm 3xl:text-[20px]  text-[#fff]  antialiased font-medium leading-relaxed text-blue-gray-900">
                                 Я согласен на обработку &nbsp;
 
                                 <a href="#"
@@ -140,7 +141,7 @@
 
 
                 <button type="submit"
-                        class="text-white  w-[141px] bg-gradient-to-r from-[#DA22FF] to-[#9733EE] px-5 py-2.5 text-center rounded-[20px] mx-auto lg:mx-0">
+                        class="text-white text-sm 3xl:text-[20px]   w-[141px] 3xl:w-fit bg-gradient-to-r from-[#DA22FF] to-[#9733EE] px-5 3xl:px-7 py-2.5 3xl:py-3.5 text-center rounded-[20px] mx-auto lg:mx-0">
                     Отправить
                 </button>
             </form>
@@ -193,7 +194,7 @@
                          x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95"
                          class="gradient-border relative w-full rounded-[20px] p-10 bg-[#1D4A81] mx-[1.5rem]
                                         sm:max-w-fit flex flex-col gap-[40px]">
-                        <div class="flex items-center justify-between gap-[30px] pb-3">
+                        <div class="flex items-center justify-between gap-[30px]  pb-3">
                             <h4 class="card__subtitle text-[#fff] text-[20px] font-[700] ">Отправлено</h4>
                             <div class="gradient-border before:p-[5px] relative w-12 h-12">
                                 <button @click="modalOpen=false"

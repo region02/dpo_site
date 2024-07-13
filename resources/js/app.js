@@ -1,6 +1,6 @@
 
 import './bootstrap';
-import './main_slider';
+// import './main_slider';   OMG ! NOOB MOMENT, I WAS NOOB
 import './feedback';
 
 import intersect from '@alpinejs/intersect'

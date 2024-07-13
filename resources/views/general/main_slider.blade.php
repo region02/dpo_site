@@ -1,6 +1,12 @@
 
 <section class='course_gallery pl-4 py-12 px-3 lg:px-12' id='course_gallery'>
 
+{{--    <style>--}}
+{{--        .course_gallery::after{--}}
+{{--            content: "" ;--}}
+{{--        }--}}
+
+{{--    </style>--}}
     <div class="flex justify-between items-center mb-[40px]">
         <h2 class="uppercase font-sans text-[#E5E5E5]
                         text-[2.5rem] font-[800] tracking-wider leading-[2.975rem] sm:leading-[1.975rem]
@@ -8,13 +14,14 @@
                         sm:text-[1.5rem] sm:font-[800] sm:tracking-wider
                         md:text-[2.0rem] md:font-[800] md:tracking-wider
                         lg:text-[2.3rem] lg:font-[800] lg:tracking-wider
-                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider ">Курсы</h2>
+                        xl:text-[2.5rem] xl:font-[800] xl:tracking-wider
+                        3xl:text-[2.8rem]">Курсы</h2>
         <div class="relative h-full flex items-center gap-4 sm:gap-10">
-            <div class="relative h-[50px] w-[50px]">
-                <img class=" swiper-button-prev !left-0 !right-0 !translate-x-0 !translate-y-0 !relative inset-0 !h-[50px] !w-[50px] object-cover rotate-180" src="{{ url('img/icons/next-arrow-slider.svg') }}" alt="slider-arrow">
+            <div class="relative h-[50px] w-[50px] 2xl:h-[60px] 2xl:w-[60px] 3xl:h-[70px] 3xl:w-[70px] select-none">
+                <img class=" swiper-button-prev  !relative inset-0 !h-[50px] !w-[50px] 2xl:!h-[60px] 2xl:!w-[60px] 3xl:!h-[70px] 3xl:!w-[70px] object-cover rotate-180" src="{{ url('img/icons/next-arrow-slider.svg') }}" alt="slider-arrow">
             </div>
-            <div class="relative h-[50px] w-[50px]">
-                <img class=" swiper-button-next !left-0 !right-0 !translate-x-0 !translate-y-0  !relative inset-0 !h-[50px] !w-[50px] object-cover " src="{{ url('img/icons/next-arrow-slider.svg') }}" alt="slider-arrow">
+            <div class="relative h-[50px] w-[50px] 2xl:h-[60px] 2xl:w-[60px] 3xl:h-[70px] 3xl:w-[70px] select-none">
+                <img class=" swiper-button-next !left-0 !right-0 !translate-x-0 !translate-y-0  !relative inset-0 !h-[50px] !w-[50px] 2xl:!h-[60px] 2xl:!w-[60px] 3xl:!h-[70px] 3xl:!w-[70px] object-cover " src="{{ url('img/icons/next-arrow-slider.svg') }}" alt="slider-arrow">
             </div>
         </div>
 
@@ -56,10 +63,10 @@
 
                 </a>
             </div>
-            @foreach($courses as $course)
+            @foreach($courses as $index => $course)
                 <div class="swiper-slide swiper-slide_flex h-auto">
                     <a href="{{route('course.show',$course)}}" class="slide__card relative border-1 border-solid border-transparent
-                                                                      max-w-[230px] h-[168px] after:transition after:duration-150 after:ease-out
+                                                                      max-w-[230px] h-[168px] after:transition after:duration-[700ms] after:ease-out
                                                                       after:content-[''] after:absolute after:bg-[#00000080] after:w-[100%]
                                                                       after:h-[inherit] after:top-0 after:rounded-[20px] hover:after:bg-[#00000000]
                                                                       min-[380px]:max-w-[300px] min-[380px]:h-[210px]
@@ -73,6 +80,7 @@
                              src="/storage/{{$course->avatar}}" alt="курс">
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         <h4 class="absolute top-0 z-10 text-[#fff] text-[16px] sm:text-[26px] text-[700] p-6 ">{{$course->title}} </h4>
+
                     </a>
                 </div>
             @endforeach
