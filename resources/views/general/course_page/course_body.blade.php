@@ -414,12 +414,43 @@
                                                    class="bg-transparent border border-[#fff] text-[#fff] text-sm 3xl:text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5 "
                                                    required>
                                         </div>
-                                        <div class=" relative  ">
+                                        <div class="relative">
                                             <label for="email"
                                                    class=" absolute inline-flex mb-2 text-sm 3xl:text-lg font-medium text-[#fff] bg-[#012F66] rounded-[5px] px-1 py-[2px] translate-y-[-50%] translate-x-[5px] border-none">почта</label>
                                             <input type="email" id="email" name="email" autocomplete="email"
                                                    class="bg-transparent border border-white text-white text-sm 3xl:text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[60px] p-2.5"
                                                    required>
+                                        </div>
+                                        <div class="relative">
+                                            <div class="inline-flex items-center gap-3">
+                                                <label class="relative flex items-center cursor-pointer  rounded-full " for="agreement">
+                                                    <input type="checkbox" required name="agreement"
+                                                           class="bg-[#255C96] outline outline-[#DA21FF] outline-[3px] border-none before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-[#255C96] checked:before:bg-gray-900 hover:before:opacity-10 !ring-[#DA21FF] !ring-offset-[#DA21FF]"
+                                                           id="agreement"/>
+                                                    <span
+                                                        class="absolute text-[#DA21FF] ring-[#DA21FF] ring-offset-[#DA21FF] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" class="h-[20px] w-7 stroke-[3px]"
+                                                           viewBox="0 0 20 20" fill="currentColor"
+                                                           stroke="currentColor" stroke-width="1">
+                                                            <path fill-rule="evenodd"
+                                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                              clip-rule="evenodd">
+                                                            </path>
+                                                      </svg>
+                                                    </span>
+                                                </label>
+                                                <label class="mt-px font-light text-gray-700  select-none" >
+                                                    <p class="flex items-center flex-wrap font-sans text-[16px] xs:text-sm 3xl:text-[20px]  text-[#fff]  antialiased font-medium leading-relaxed text-blue-gray-900">
+                                                        Я согласен на обработку &nbsp;
+
+                                                        <a href="#"
+                                                           class="block w-fit font-sans  antialiased font-medium leading-relaxed text-blue-500 transition-colors underline underline-offset-[4px] hover:text-[#DA21FF]">
+                                                            персональных данных
+                                                        </a>
+
+                                                    </p>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col-reverse sm:flex-row relative h-[52px] ">
