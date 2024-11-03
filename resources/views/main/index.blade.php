@@ -378,7 +378,8 @@
                                     </defs>
                                 </svg>
 
-                                <div class="absolute right-[120px] w-[165px] h-[165px] top-[-90%] hidden min-[850px]:block  type__avatar avatar__bg-{{$type->id}}">
+                                <div class="absolute right-[120px] w-[165px] h-[165px] top-[-90%] hidden min-[850px]:block  type__avatar avatar__bg-{{$type->id}}
+                                            !flex items-center">
                                     <img width="100%" src="/storage/{{$type->avatar}}">
                                 </div>
                             </div>

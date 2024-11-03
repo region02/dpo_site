@@ -24,7 +24,7 @@ class MainController extends Controller
     public function feedback(FeedbackFormRequest $request)
     {
 
-        if (!($request->agreement)){
+        if (!($request->agreement_1 || $request->agreement_2)) {
 
             return Redirect::to(url()->previous() . '#feedback')->with('status', 'feedback-not-ok');
         };
