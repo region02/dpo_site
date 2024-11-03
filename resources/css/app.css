@@ -20,9 +20,9 @@
             'A B'
             'x B'
             'C B';
-        grid-template-columns: 60% 40%;
+        grid-template-columns: 55% 45%;
     }
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1300px) {
         .feedback__container{
             display: grid;
             grid-template-areas:
