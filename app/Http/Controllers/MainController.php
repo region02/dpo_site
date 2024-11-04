@@ -34,6 +34,6 @@ class MainController extends Controller
 
         Mail::send(new NotificationOfFeedback($feedback));
 
-        return Redirect::to(url()->previous() . '#feedback')->with('status','feedback-ok');
+        return response()->json(['status' => 'feedback-ok']);
     }
 }

@@ -66,11 +66,11 @@ class CourseController extends Controller
     public function userPut(Course $course, SignUpFormRequest $request)
     {
         $validated = $request->validated();
-
+         
         $userCourse = UserCourse::create(array_merge($validated,['course_id' => $course->id]));
 
         Mail::send(new NotificationOfSignUp($userCourse));
 
-        return Redirect::back()->with('status','registered');
+        return response()->json(['status' => 'registered']);
     }
 }
