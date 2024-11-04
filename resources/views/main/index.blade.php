@@ -358,17 +358,17 @@
                                 </svg>
                             </div>
                             <div class="relative w-[50px] sm:w-[70px] type__pics">
-                                <svg width="100%" height="auto" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                <svg width="100%"  viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" >
                                     <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="none" stroke="none"/>
                                 </svg>
-                                <svg width="100%" height="auto" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" class=" absolute top-0 z-20">
+                                <svg width="100%"  viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" class=" absolute top-0 z-20">
                                     <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="none" stroke="white"/>
                                     <path d="M33.1531 23.12H49.2298V39.2346" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M49.2301 23.12L27.7693 44.5808" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M15.75 56.6005C30.4996 61.5297 46.5004 61.5297 61.25 56.6005" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
                                 </svg>
-                                <svg width="100%" height="auto" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" class="gradient-change-{{ $loop->index }} absolute top-0 z-10  ">
+                                <svg width="100%"  viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg" class="gradient-change-{{ $loop->index }} absolute top-0 z-10  ">
                                     <rect x="0.5" y="0.5" width="77" height="77" rx="19.5" fill="url(#paint{{ $type->id }}_linear);" stroke="none"/>
                                     <defs>
                                         <linearGradient id="paint{{ $type->id }}_linear" x1="0" y1="39" x2="78" y2="39" gradientUnits="userSpaceOnUse">
